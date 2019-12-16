@@ -1,4 +1,4 @@
-package com.example.beetrootapp;
+package com.example.beetrootapp.fragment;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -16,6 +16,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.example.beetrootapp.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -51,9 +52,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         locationPermission();
-        //buildGoogleApiClient();
-        //locationManager = (LocationManager)getSystemService()
-
     }
     private void buildGoogleApiClient() {
         this.googleApiClient = new GoogleApiClient.Builder(getContext())
@@ -69,11 +67,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         map = googleMap;
         map.setMyLocationEnabled(true);
         buildGoogleApiClient();
-
-        /*LatLng loc = new LatLng(lat, lng);
-        map.addMarker(new MarkerOptions().position(loc).title("New Marker"));
-        map.moveCamera(CameraUpdateFactory.newLatLng(loc));*/
-
     }
     void locationPermission() {
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -89,7 +82,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
 
             LatLng loc = new LatLng(lat, lng);
             map.addMarker(new MarkerOptions().position(loc).title("Vous êtes içi"));
-            map.moveCamera(CameraUpdateFactory.newLatLng(loc));
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc,5));
         }
     }
 

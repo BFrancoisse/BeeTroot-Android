@@ -1,4 +1,4 @@
-package com.example.beetrootapp;
+package com.example.beetrootapp.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -6,17 +6,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.beetrootapp.fragment.FarmFragment;
+import com.example.beetrootapp.fragment.FavoritesFragment;
+import com.example.beetrootapp.fragment.HarvestFragment;
+import com.example.beetrootapp.fragment.MapFragment;
+import com.example.beetrootapp.fragment.ProximityFragment;
+import com.example.beetrootapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private DrawerLayout drawerLayout;
+    protected DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
@@ -92,8 +98,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                        new HarvestFragment()).commit();
                break;
            case R.id.settings:
-               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                       new SettingsFragment()).commit();
+               /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                       new SettingsFragment()).commit();*/
+               Intent intent = new Intent(this, UserInfoActivity.class);
+               startActivity(intent);
+
                break;
             //déconnection
 
