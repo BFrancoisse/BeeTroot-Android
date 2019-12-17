@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.beetrootapp.DAO.UserDAO;
+import com.example.beetrootapp.repository.UserRepository;
 import com.example.beetrootapp.R;
 
 public class FarmActivity extends AppCompatActivity {
@@ -21,7 +21,7 @@ public class FarmActivity extends AppCompatActivity {
     private TextView txtAddress;
     private TextView txtDescription;
 
-    private UserDAO userDAO;
+    private UserRepository userDAO;
     // private FarmDAO farmDAO;
 
     @Override

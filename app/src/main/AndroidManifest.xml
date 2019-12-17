@@ -19,6 +19,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activity.EditProfileActivity"></activity>
         <activity android:name=".activity.UserInfoActivity" />
+        <activity android:name=".activity.FarmActivity" />
+        <activity android:name=".activity.EditFarmActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

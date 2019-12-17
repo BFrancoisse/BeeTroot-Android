@@ -303,7 +303,7 @@ tools:context=".activity.EditProfileActivity">
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:padding="8dp"
-                android:text="Sauvegarder changements"
+                android:text="Sauvegarder"
                 android:layout_gravity="center_vertical|center_horizontal"/>
         </LinearLayout>
 
