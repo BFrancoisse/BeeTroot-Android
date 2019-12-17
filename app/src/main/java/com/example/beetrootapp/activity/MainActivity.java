@@ -11,7 +11,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.beetrootapp.fragment.FarmFragment;
 import com.example.beetrootapp.fragment.FavoritesFragment;
 import com.example.beetrootapp.fragment.HarvestFragment;
 import com.example.beetrootapp.fragment.MapFragment;
@@ -90,8 +89,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                        new MapFragment()).commit();
                break;
            case R.id.myFarm:
-               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                       new FarmFragment()).commit();
+               Intent openFarmActivity = new Intent(this, FarmActivity.class);
+               startActivity(openFarmActivity);
                break;
            case R.id.harvestProximity:
                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

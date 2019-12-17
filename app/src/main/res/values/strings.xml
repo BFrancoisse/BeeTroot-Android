@@ -18,16 +18,22 @@
     <string name="lastname">Nom</string>
     <string name="email">Adresse mail</string>
     <string name="phone">Numéro de téléphone</string>
-    <string name="address">Adresse :</string>
+    <string name="address">Adresse</string>
     <string name="street">Rue</string>
     <string name="numberHouse">Numéro de maison</string>
     <string name="zipCode">Code postal</string>
     <string name="locality">Localité</string>
-    <string name="farm">Ferme :</string>
-    <string name="farmName">Nom de la Ferme</string>
-    <string name="phoneFarm">Numéro de Téléphone</string>
+    <string name="farm">Ferme</string>
+    <string name="farmName">Nom de la ferme</string>
+    <string name="phoneFarm">Numéro de téléphone</string>
 
-    <string name="editProfil">Editer son profil</string>
+    <string name="editProfil">Editer mon profil</string>
+    <string name="editFarm">Modifier ma ferme</string>
+    <string name="addReview">Rédiger un avis</string>
+    <string name="direction">Itinéraire</string>
+
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
