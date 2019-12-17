@@ -1,4 +1,4 @@
-package com.example.beetrootapp.DAO;
+package com.example.beetrootapp.repository;
 
 import android.util.Log;
 
@@ -14,7 +14,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class UserDAO {
+public class UserRepository {
 
     public LiveData<User> getUserById(/*int id*/){
         final MutableLiveData<User> mutableLiveData = new MutableLiveData<>();

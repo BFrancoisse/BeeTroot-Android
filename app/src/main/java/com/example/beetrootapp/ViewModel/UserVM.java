@@ -3,7 +3,7 @@ package com.example.beetrootapp.ViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.beetrootapp.DAO.UserDAO;
+import com.example.beetrootapp.repository.UserRepository;
 import com.example.beetrootapp.model.User;
 
 public class UserVM extends androidx.lifecycle.ViewModel{
@@ -17,7 +17,7 @@ public class UserVM extends androidx.lifecycle.ViewModel{
     }
 
    private LiveData<User> loadUserById(){
-       UserDAO userDAO = new UserDAO();
-       return userDAO.getUserById();
+       UserRepository userRepository = new UserRepository();
+       return userRepository.getUserById();
    }
 }
