@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.ViewModel.UserVM;
+import com.example.beetrootapp.model.User;
 
 public class UserInfoActivity extends AppCompatActivity {
     private Button buttonEditProfile;
@@ -27,6 +28,7 @@ public class UserInfoActivity extends AppCompatActivity {
     private TextView txtFarmPhone;
 
     private UserVM userVM;
+    private User uUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,8 @@ public class UserInfoActivity extends AppCompatActivity {
             txtNumberHouse.setText(user.getAddress().getNumber());
             txtZipCode.setText("" + user.getAddress().getZipCode());
             txtLocality.setText(user.getAddress().getCity());
+
+            uUser = user;
             /*txtFirstname.setText(user.getFirstname());
             txtFirstname.setText(user.getFirstname());
             */
@@ -88,6 +92,7 @@ public class UserInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), EditProfileActivity.class);
+                //intent.putExtra("currentUser",uUser);
                 startActivity(intent);
                 finish();
             }

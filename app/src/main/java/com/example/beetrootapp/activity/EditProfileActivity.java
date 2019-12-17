@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.ViewModel.UserVM;
+import com.example.beetrootapp.model.User;
 
 public class EditProfileActivity extends AppCompatActivity {
 
@@ -79,6 +80,10 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Profil sauvegardé",Toast.LENGTH_LONG).show();
+
+                //User user = new User()
+               User currentUser = (User) getIntent().getSerializableExtra("currentUser");
+
                 Intent intent = new Intent(getBaseContext(), UserInfoActivity.class);
                 startActivity(intent);
                 finish();

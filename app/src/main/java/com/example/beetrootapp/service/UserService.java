@@ -14,6 +14,7 @@ public interface UserService {
     @GET("user/getUserById")
     Call<User> getUserById(@Query("id")Integer id);
 
+
     @POST("user/updateUser")
     Call<User> updateUser(@Body User user);
 
