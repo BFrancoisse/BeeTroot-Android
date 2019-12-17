@@ -3,11 +3,13 @@ package com.example.beetrootapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -32,11 +34,26 @@ public class EditProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         bindEditTextId();
         setEditTextValues();
 
-
         setButtonSaveProfile();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+        if(item.getItemId() == 16908332) {
+            Intent intent = new Intent(this, UserInfoActivity.class);
+            startActivity(intent);
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
    public void setEditTextValues(){
@@ -64,6 +81,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Profil sauvegardé",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getBaseContext(), UserInfoActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
