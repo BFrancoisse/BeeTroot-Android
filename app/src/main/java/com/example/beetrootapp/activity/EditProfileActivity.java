@@ -9,20 +9,51 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.example.beetrootapp.R;
+import com.example.beetrootapp.ViewModel.UserVM;
 
 public class EditProfileActivity extends AppCompatActivity {
 
     private Button saveProfile;
+    private EditText editFirstname;
+    private EditText editLastname;
+    private EditText editEmail;
+    private EditText editPhone;
+    private EditText editStreet;
+    private EditText editNumberHouse;
+    private EditText editZipCode;
+    private EditText editLocality;
+    private UserVM userVM;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+        bindEditTextId();
+        setEditTextValues();
+
 
         setButtonSaveProfile();
+    }
+
+   public void setEditTextValues(){
+        userVM = ViewModelProviders.of(this).get(UserVM.class);
+        userVM.getUserById().observe(this, user -> {
+            editFirstname.setText(user.getFirstname());
+            editLastname.setText(user.getLastname());
+            editEmail.setText(user.getEmail());
+            editPhone.setText(user.getPhone());
+            editStreet.setText(user.getAddress().getStreet());
+            editNumberHouse.setText(user.getAddress().getNumber());
+            editZipCode.setText("" + user.getAddress().getZipCode());
+            editLocality.setText(user.getAddress().getCity());
+            /*txtFirstname.setText(user.getFirstname());
+            txtFirstname.setText(user.getFirstname());
+            */
+        });
     }
 
     public void setButtonSaveProfile(){
@@ -37,6 +68,13 @@ public class EditProfileActivity extends AppCompatActivity {
         });
     }
     public void bindEditTextId(){
-
+        editFirstname = (EditText) findViewById(R.id.editFirstname);
+        editLastname = (EditText) findViewById(R.id.editLastname);
+        editEmail = (EditText) findViewById(R.id.editEmail);
+        editPhone = (EditText) findViewById(R.id.editPhone);
+        editStreet = (EditText) findViewById(R.id.editStreet);
+        editNumberHouse = (EditText) findViewById(R.id.editNumberHouse);
+        editZipCode = (EditText) findViewById(R.id.editZipCode);
+        editLocality = (EditText) findViewById(R.id.editLocality);
     }
 }

@@ -57,7 +57,7 @@ tools:context=".activity.EditProfileActivity">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Prénom"
+                    android:text="@string/firstname"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
@@ -65,7 +65,7 @@ tools:context=".activity.EditProfileActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="John"
+                    android:id="@+id/editFirstname"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -85,7 +85,7 @@ tools:context=".activity.EditProfileActivity">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nom"
+                    android:text="@string/lastname"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
@@ -93,7 +93,7 @@ tools:context=".activity.EditProfileActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Doe"
+                    android:id="@+id/editLastname"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -113,7 +113,7 @@ tools:context=".activity.EditProfileActivity">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email"
+                    android:text="@string/email"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
@@ -121,7 +121,7 @@ tools:context=".activity.EditProfileActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="johndoe@gmail.com"
+                    android:id="@+id/editEmail"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -142,7 +142,7 @@ tools:context=".activity.EditProfileActivity">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Numéro de téléphone"
+                    android:text="@string/phone"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
@@ -150,7 +150,7 @@ tools:context=".activity.EditProfileActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="0470/03.49.97"
+                    android:id="@+id/editPhone"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -173,7 +173,7 @@ tools:context=".activity.EditProfileActivity">
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="1dp"
-                    android:text="Adresse :"
+                    android:text="@string/address"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -188,7 +188,7 @@ tools:context=".activity.EditProfileActivity">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rue"
+                    android:text="@string/street"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
@@ -196,36 +196,7 @@ tools:context=".activity.EditProfileActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Rue du Moulin"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@color/colorPrimary" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Numéro de maison"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="13sp" />
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:text="5A"
+                    android:id="@+id/editStreet"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -246,7 +217,7 @@ tools:context=".activity.EditProfileActivity">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Code Postal"
+                    android:text="@string/numberHouse"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
@@ -254,7 +225,7 @@ tools:context=".activity.EditProfileActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="5530"
+                    android:id="@+id/editNumberHouse"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -275,7 +246,7 @@ tools:context=".activity.EditProfileActivity">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Localité"
+                    android:text="@string/zipCode"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
@@ -283,7 +254,36 @@ tools:context=".activity.EditProfileActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Yvoir"
+                    android:id="@+id/editZipCode"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorPrimary" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/locality"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:id="@+id/editLocality"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 

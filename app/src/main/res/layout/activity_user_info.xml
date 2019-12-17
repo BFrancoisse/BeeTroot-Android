@@ -57,7 +57,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/firstname"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp" />
 
@@ -65,7 +64,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="John"
                         android:id="@+id/txtFirstname"
                         android:textColor="#000000"
                         android:textSize="18sp" />
@@ -86,7 +84,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/lastname"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp" />
 
@@ -94,7 +91,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="Doe"
                         android:id="@+id/txtLastname"
                         android:textColor="#000000"
                         android:textSize="18sp" />
@@ -123,7 +119,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="johndoe@gmail.com"
                         android:id="@+id/txtEmail"
                         android:textColor="#000000"
                         android:textSize="18sp" />
@@ -153,7 +148,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="0470/03.49.97"
                         android:id="@+id/txtPhone"
                         android:textColor="#000000"
                         android:textSize="18sp" />
@@ -192,7 +186,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/street"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp" />
 
@@ -200,7 +193,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="Rue du Moulin"
                         android:id="@+id/txtStreet"
                         android:textColor="#000000"
                         android:textSize="18sp" />
@@ -230,7 +222,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="5A"
                         android:id="@+id/txtNumberHouse"
                         android:textColor="#000000"
                         android:textSize="18sp" />
@@ -260,7 +251,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="5530"
                         android:id="@+id/txtZipCode"
                         android:textColor="#000000"
                         android:textSize="18sp" />
@@ -290,7 +280,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="Yvoir"
                         android:id="@+id/txtLocality"
                         android:textColor="#000000"
                         android:textSize="18sp" />
@@ -339,7 +328,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="La ferme du Village"
                         android:id="@+id/txtFarmName"
                         android:textColor="#000000"
                         android:textSize="18sp" />
@@ -369,7 +357,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="0470/03.49.97"
                         android:id="@+id/txtFarmPhone"
                         android:textColor="#000000"
                         android:textSize="18sp" />

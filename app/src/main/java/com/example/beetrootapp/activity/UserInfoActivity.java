@@ -1,6 +1,5 @@
 package com.example.beetrootapp.activity;
 
-//import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +7,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.beetrootapp.DAO.UserDAO;
+import androidx.lifecycle.ViewModelProviders;
 import com.example.beetrootapp.R;
-import com.example.beetrootapp.model.User;
+import com.example.beetrootapp.ViewModel.UserVM;
 
 public class UserInfoActivity extends AppCompatActivity {
     private Button buttonEditProfile;
@@ -25,20 +23,36 @@ public class UserInfoActivity extends AppCompatActivity {
     private TextView txtLocality;
     private TextView txtFarmName;
     private TextView txtFarmPhone;
-    private UserDAO userDAO;
+
+    private UserVM userVM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
-
-        /*userDAO = new UserDAO();
-        User user = userDAO.getUserById();
-*/
-        setButtonEditProfile();
         bindTextViewId();
-
+        setTextViewValues();
+        setButtonEditProfile();
     }
+
+
+    public void setTextViewValues(){
+        userVM = ViewModelProviders.of(this).get(UserVM.class);
+        userVM.getUserById().observe(this, user -> {
+            txtFirstname.setText(user.getFirstname());
+            txtLastname.setText(user.getLastname());
+            txtEmail.setText(user.getEmail());
+            txtPhone.setText(user.getPhone());
+            txtStreet.setText(user.getAddress().getStreet());
+            txtNumberHouse.setText(user.getAddress().getNumber());
+            txtZipCode.setText("" + user.getAddress().getZipCode());
+            txtLocality.setText(user.getAddress().getCity());
+            /*txtFirstname.setText(user.getFirstname());
+            txtFirstname.setText(user.getFirstname());
+            */
+        });
+    }
+
     public void bindTextViewId(){
         txtFirstname = (TextView) findViewById(R.id.txtFirstname);
         txtLastname = (TextView) findViewById(R.id.txtLastname);
