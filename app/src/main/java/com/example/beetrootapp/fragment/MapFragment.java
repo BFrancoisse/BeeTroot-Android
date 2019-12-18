@@ -12,8 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.example.beetrootapp.R;
+import com.example.beetrootapp.ViewModel.FarmVM;
+import com.example.beetrootapp.model.Farm;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -23,11 +26,11 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.List;
 
 public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener{
 
@@ -38,8 +41,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     private MapView mapView;
     private View view;
     double lat =0, lng=0;
-    Marker mCurrLocationMarker;
-    LatLng loc;
+
+    private FarmVM farmVM;
+    private List<Farm> farmList;
 
 
     @Nullable
@@ -72,8 +76,28 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
                 .position(new LatLng(50.4712, 4.85259))
                 .title("Ferme de l'IESN")
                 .snippet("Vend des patates"));
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lng),5));
+        insertFarmsOnMap();
+        //map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lng),5));
     }
+    public void insertFarmsOnMap(){
+        farmVM = ViewModelProviders.of(this).get(FarmVM.class);
+        farmVM.getFarms().observe(this,farms -> {
+            for(Farm farm:farms)
+            {
+                String geographicCoordinates = farm.getGeographicCoordinates();
+                String[] splitGC = geographicCoordinates.split(",");
+                String lat = splitGC[0];
+                String lng = splitGC[1];
+                map.addMarker(new MarkerOptions()
+                        .position(new LatLng(Double.parseDouble(lat), Double.parseDouble(lng)))
+                        .title(farm.getName())
+                        .snippet(farm.getDescription()));
+            }
+
+        });
+    }
+
+
 
 
 

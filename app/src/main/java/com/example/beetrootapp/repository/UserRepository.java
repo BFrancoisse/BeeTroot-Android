@@ -1,12 +1,10 @@
 package com.example.beetrootapp.repository;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.beetrootapp.activity.EditProfileActivity;
 import com.example.beetrootapp.model.User;
 import com.example.beetrootapp.service.UserService;
 
