@@ -1,6 +1,8 @@
 package com.example.beetrootapp.model;
 
-public class Harvest {
+import java.io.Serializable;
+
+public class Harvest implements Serializable{
     private int id;
     private String name;
     private String geographicCoordinates;

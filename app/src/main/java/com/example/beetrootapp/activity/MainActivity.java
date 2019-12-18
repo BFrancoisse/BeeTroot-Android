@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     switch(menuItem.getItemId()){
                         case R.id.nav_cart:
                             selectedFragment = new MapFragment();
+
                             break;
                         case R.id.nav_proximity:
                             selectedFragment = new ProximityFragment();

@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.ViewModel.UserVM;
 import com.example.beetrootapp.model.User;
+import com.example.beetrootapp.repository.UserRepository;
 
 public class EditProfileActivity extends AppCompatActivity {
 
@@ -28,7 +29,12 @@ public class EditProfileActivity extends AppCompatActivity {
     private EditText editNumberHouse;
     private EditText editZipCode;
     private EditText editLocality;
+
     private UserVM userVM;
+    private User currentUser;
+    private UserRepository userRepository;
+
+
 
 
     @Override
@@ -38,6 +44,8 @@ public class EditProfileActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+         currentUser = (User) getIntent().getSerializableExtra("currentUser");
 
         bindEditTextId();
         setEditTextValues();
@@ -80,9 +88,20 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Profil sauvegardé",Toast.LENGTH_LONG).show();
+                currentUser.setEmail(editEmail.getText().toString());
+                currentUser.setFirstname(editFirstname.getText().toString());
+                currentUser.setLastname(editLastname.getText().toString());
+                currentUser.setPhone(editPhone.getText().toString());
+                currentUser.getAddress().setStreet(editStreet.getText().toString());
+                currentUser.getAddress().setNumber(editNumberHouse.getText().toString());
+                currentUser.getAddress().setZipCode(Integer.parseInt(editZipCode.getText().toString()));
+                currentUser.getAddress().setCity(editLocality.getText().toString());
+
+
+                userRepository.updateUser(currentUser);
 
                 //User user = new User()
-               User currentUser = (User) getIntent().getSerializableExtra("currentUser");
+
 
                 Intent intent = new Intent(getBaseContext(), UserInfoActivity.class);
                 startActivity(intent);

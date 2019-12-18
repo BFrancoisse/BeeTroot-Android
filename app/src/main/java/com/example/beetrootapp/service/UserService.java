@@ -5,7 +5,7 @@ import com.example.beetrootapp.model.User;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface UserService {
@@ -15,7 +15,7 @@ public interface UserService {
     Call<User> getUserById(@Query("id")Integer id);
 
 
-    @POST("user/updateUser")
+    @PUT("user/updateUser")
     Call<User> updateUser(@Body User user);
 
 }

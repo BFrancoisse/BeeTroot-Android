@@ -54,7 +54,7 @@ public class UserRepository {
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-
+                System.out.println("failure");
             }
         });
     }

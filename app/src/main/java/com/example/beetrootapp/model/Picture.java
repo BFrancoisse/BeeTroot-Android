@@ -1,6 +1,8 @@
 package com.example.beetrootapp.model;
 
-public class Picture {
+import java.io.Serializable;
+
+public class Picture implements Serializable {
     private int id;
     private String name;
     private String pictureURL;

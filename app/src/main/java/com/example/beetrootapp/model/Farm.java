@@ -1,6 +1,8 @@
 package com.example.beetrootapp.model;
 
-public class Farm {
+import java.io.Serializable;
+
+public class Farm implements Serializable {
     private int id;
     private String name;
     private String geographicCoordinates;

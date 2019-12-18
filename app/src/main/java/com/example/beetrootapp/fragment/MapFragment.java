@@ -3,35 +3,33 @@ package com.example.beetrootapp.fragment;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import com.example.beetrootapp.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 
-public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener{
 
 
     private GoogleMap map;
@@ -40,6 +38,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     private MapView mapView;
     private View view;
     double lat =0, lng=0;
+    Marker mCurrLocationMarker;
+    LatLng loc;
 
 
     @Nullable
@@ -52,8 +52,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         locationPermission();
+        buildGoogleApiClient();
     }
-    private void buildGoogleApiClient() {
+    private synchronized void buildGoogleApiClient() {
         this.googleApiClient = new GoogleApiClient.Builder(getContext())
                 .addConnectionCallbacks( this)
                 .addOnConnectionFailedListener( this)
@@ -66,8 +67,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         MapsInitializer.initialize((getContext()));
         map = googleMap;
         map.setMyLocationEnabled(true);
-        buildGoogleApiClient();
+        map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        map.addMarker(new MarkerOptions()
+                .position(new LatLng(50.4712, 4.85259))
+                .title("Ferme de l'IESN")
+                .snippet("Vend des patates"));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lng),5));
     }
+
+
+
     void locationPermission() {
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1);
@@ -76,16 +85,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     public void onConnected(Bundle bundle) {
         lastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 googleApiClient);
-        if (lastLocation != null) {
+       /* if (lastLocation != null) {
             lat = lastLocation.getLatitude();
             lng = lastLocation.getLongitude();
 
-            LatLng loc = new LatLng(lat, lng);
-            map.addMarker(new MarkerOptions().position(loc).title("Vous êtes içi"));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc,5));
-        }
-    }
+            loc = new LatLng(lat, lng);
 
+        }*/
+    }
     @Override
     public void onConnectionSuspended(int i) {
 
@@ -130,5 +137,20 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         mapView.onLowMemory();
     }
 
+    @Override
+    public void onStart() {
+
+        googleApiClient.connect();
+        super.onStart();
+
+    }
+
+
+    @Override
+    public void onLocationChanged(Location location) {
+        lastLocation = location;
+        lat= location.getLatitude();
+        lng = location.getLongitude();
+    }
 }
 

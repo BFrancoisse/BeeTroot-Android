@@ -1,6 +1,8 @@
 package com.example.beetrootapp.model;
 
-public class Review {
+import java.io.Serializable;
+
+public class Review implements Serializable {
     private int id;
     private int note;
     private String commentary;

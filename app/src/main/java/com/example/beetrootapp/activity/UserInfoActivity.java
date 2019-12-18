@@ -92,7 +92,7 @@ public class UserInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), EditProfileActivity.class);
-                //intent.putExtra("currentUser",uUser);
+                intent.putExtra("currentUser",uUser);
                 startActivity(intent);
                 finish();
             }

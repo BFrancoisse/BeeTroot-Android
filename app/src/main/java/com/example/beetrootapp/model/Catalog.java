@@ -1,6 +1,8 @@
 package com.example.beetrootapp.model;
 
-public class Catalog {
+import java.io.Serializable;
+
+public class Catalog implements Serializable {
     private int farmId;
     private int productId;
     private Farm farm;
