@@ -1,16 +1,22 @@
 package com.example.beetrootapp.fragment;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,8 +30,10 @@ import com.example.beetrootapp.ViewModel.FarmVM;
 import com.example.beetrootapp.model.Farm;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -34,10 +42,14 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.*;
+import java.io.IOException;
 import java.util.List;
+
+import static androidx.constraintlayout.widget.Constraints.TAG;
+
 
 public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener{
 
@@ -50,13 +62,17 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     double lat =0, lng=0;
 
     private FarmVM farmVM;
-    private List<Farm> farmList;
 
+    private SearchView searchView;
+
+    private FusedLocationProviderClient fusedLocationProviderClient;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //setSearchView();
         return inflater.inflate(R.layout.fragment_map,container,false);
+
     }
 
     @Override
@@ -64,6 +80,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         super.onCreate(savedInstanceState);
         locationPermission();
         buildGoogleApiClient();
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        //setSearchView();
     }
     private synchronized void buildGoogleApiClient() {
         this.googleApiClient = new GoogleApiClient.Builder(getContext())
@@ -77,15 +95,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     public void onMapReady(GoogleMap googleMap) {
         MapsInitializer.initialize((getContext()));
         map = googleMap;
+        getDeviceLocation();
         map.setMyLocationEnabled(true);
         map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        map.addMarker(new MarkerOptions()
-                .position(new LatLng(50.4712, 4.85259))
-                .title("Ferme de l'IESN")
-                .snippet("Vend des patates"));
+
         insertFarmsOnMap();
         //map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lng),5));
     }
+
     public void insertFarmsOnMap(){
         farmVM = ViewModelProviders.of(this).get(FarmVM.class);
         farmVM.getFarms().observe(this,farms -> {
@@ -127,8 +144,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         }
     }
     public void onConnected(Bundle bundle) {
-        lastLocation = LocationServices.FusedLocationApi.getLastLocation(
-                googleApiClient);
+        //lastLocation = LocationServices.FusedLocationApi.getLastLocation(
+          //      googleApiClient);
        /* if (lastLocation != null) {
             lat = lastLocation.getLatitude();
             lng = lastLocation.getLongitude();
@@ -148,6 +165,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
             mapView.onCreate(null);
             mapView.onResume();
             mapView.getMapAsync(this);
+            //setSearchView();
         }
     }
 
@@ -189,12 +207,65 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
 
     }
 
+    public void setSearchView(){
+        searchView = searchView.findViewById(R.id.sv_location);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                String location = searchView.getQuery().toString();
+                List<Address> addressList = null;
+
+                if(location != null  || !location.equals("")){
+                    Geocoder geocoder = new Geocoder(getContext());
+                    try{
+                        addressList = geocoder.getFromLocationName(location, 1 );
+                    }catch(IOException e){
+                        e.printStackTrace();
+                    }
+                    Address address = addressList.get(0);
+                    LatLng latLng = new LatLng(address.getLatitude(),address.getLongitude());
+                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+    }
+
 
     @Override
     public void onLocationChanged(Location location) {
-        lastLocation = location;
+       /* lastLocation = location;
         lat= location.getLatitude();
-        lng = location.getLongitude();
+        lng = location.getLongitude();*/
+    }
+
+
+    private void getDeviceLocation(){
+        try {
+
+                Task<Location> locationResult = fusedLocationProviderClient.getLastLocation();
+                locationResult.addOnCompleteListener(new OnCompleteListener<Location>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Location> task) {
+                        if (task.isSuccessful()) {
+                            Location location = task.getResult();
+                            LatLng currentLatLng = new LatLng(location.getLatitude(),
+                                    location.getLongitude());
+                            CameraUpdate update = CameraUpdateFactory.newLatLngZoom(currentLatLng,
+                                    11);
+                            map.animateCamera(update);
+                        }
+                    }
+                });
+
+        } catch (SecurityException e) {
+            Log.e("Exception: %s", e.getMessage());
+        }
     }
 }
 

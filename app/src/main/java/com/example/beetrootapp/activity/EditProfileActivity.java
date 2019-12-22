@@ -66,7 +66,7 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
    public void setEditTextValues(){
-        userVM = ViewModelProviders.of(this).get(UserVM.class);
+        /*userVM = ViewModelProviders.of(this).get(UserVM.class);
         userVM.getUserById().observe(this, user -> {
             editFirstname.setText(user.getFirstname());
             editLastname.setText(user.getLastname());
@@ -79,7 +79,24 @@ public class EditProfileActivity extends AppCompatActivity {
             /*txtFirstname.setText(user.getFirstname());
             txtFirstname.setText(user.getFirstname());
             */
-        });
+        /*
+        });*/
+
+       //userVM = ViewModelProviders.of(this).get(UserVM.class);
+       //userVM.getUserById().observe(this, user -> {
+           editFirstname.setText(currentUser.getFirstname());
+           editLastname.setText(currentUser.getLastname());
+           editEmail.setText(currentUser.getEmail());
+           editPhone.setText(currentUser.getPhone());
+           editStreet.setText(currentUser.getAddress().getStreet());
+           editNumberHouse.setText(currentUser.getAddress().getNumber());
+           editZipCode.setText("" + currentUser.getAddress().getZipCode());
+           editLocality.setText(currentUser.getAddress().getCity());
+            /*txtFirstname.setText(user.getFirstname());
+            txtFirstname.setText(user.getFirstname());
+            */
+       //});
+
     }
 
     public void setButtonSaveProfile(){
@@ -97,7 +114,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 currentUser.getAddress().setZipCode(Integer.parseInt(editZipCode.getText().toString()));
                 currentUser.getAddress().setCity(editLocality.getText().toString());
 
-
+                userRepository = new UserRepository();
                 userRepository.updateUser(currentUser);
 
                 //User user = new User()
