@@ -40,7 +40,8 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:paddingBottom="15dp"
                         android:text="@string/informations"
@@ -55,15 +56,17 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:textColor="@color/colorPrimary"
                         android:text="@string/firstname"
                         android:textSize="13sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/txtFirstname"
                         android:textColor="#000000"
@@ -83,15 +86,17 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:textColor="@color/colorPrimary"
                         android:text="@string/lastname"
                         android:textSize="13sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/txtLastname"
                         android:textColor="#000000"
@@ -111,15 +116,17 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="@string/email"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/txtEmail"
                         android:textColor="#000000"
@@ -140,15 +147,17 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="@string/phone"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/txtPhone"
                         android:textColor="#000000"
@@ -170,7 +179,8 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:paddingBottom="1dp"
                         android:text="@string/address"
@@ -186,15 +196,17 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:textColor="@color/colorPrimary"
                         android:text="@string/street"
                         android:textSize="13sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/txtStreet"
                         android:textColor="#000000"
@@ -215,15 +227,17 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="@string/numberHouse"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/txtNumberHouse"
                         android:textColor="#000000"
@@ -244,15 +258,17 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="@string/zipCode"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/txtZipCode"
                         android:textColor="#000000"
@@ -273,15 +289,17 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="@string/locality"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/txtLocality"
                         android:textColor="#000000"
@@ -305,7 +323,8 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:paddingBottom="1dp"
                         android:text="@string/farm"
@@ -321,15 +340,17 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="@string/farmName"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/txtFarmName"
                         android:textColor="#000000"
@@ -350,15 +371,17 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:text="@string/phoneFarm"
                         android:textColor="@color/colorPrimary"
                         android:textSize="13sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-light"
                         android:id="@+id/txtFarmPhone"
                         android:textColor="#000000"

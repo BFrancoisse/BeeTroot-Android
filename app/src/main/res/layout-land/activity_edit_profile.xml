@@ -45,7 +45,9 @@ tools:context=".activity.EditProfileActivity">
                     android:paddingBottom="15dp"
                     android:text="@string/informations"
                     android:textColor="#000000"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    />
 
             </LinearLayout>
 
@@ -55,15 +57,17 @@ tools:context=".activity.EditProfileActivity">
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:text="@string/firstname"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:gravity="center"/>
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="sans-serif-light"
                     android:id="@+id/editFirstname"
                     android:textColor="#000000"
@@ -78,15 +82,18 @@ tools:context=".activity.EditProfileActivity">
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:text="@string/lastname"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    />
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="sans-serif-light"
                     android:id="@+id/editLastname"
                     android:textColor="#000000"
@@ -102,15 +109,17 @@ tools:context=".activity.EditProfileActivity">
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:text="@string/email"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="sans-serif-light"
                     android:id="@+id/editEmail"
                     android:textColor="#000000"
@@ -126,15 +135,17 @@ tools:context=".activity.EditProfileActivity">
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:text="@string/phone"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="sans-serif-light"
                     android:id="@+id/editPhone"
                     android:textColor="#000000"
@@ -152,7 +163,8 @@ tools:context=".activity.EditProfileActivity">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="1dp"
                     android:text="@string/address"
@@ -168,15 +180,17 @@ tools:context=".activity.EditProfileActivity">
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:text="@string/street"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="sans-serif-light"
                     android:id="@+id/editStreet"
                     android:textColor="#000000"
@@ -193,15 +207,17 @@ tools:context=".activity.EditProfileActivity">
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:text="@string/numberHouse"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="sans-serif-light"
                     android:id="@+id/editNumberHouse"
                     android:textColor="#000000"
@@ -218,15 +234,17 @@ tools:context=".activity.EditProfileActivity">
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:text="@string/zipCode"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="sans-serif-light"
                     android:id="@+id/editZipCode"
                     android:textColor="#000000"
@@ -243,15 +261,17 @@ tools:context=".activity.EditProfileActivity">
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:text="@string/locality"
                     android:textColor="@color/colorPrimary"
                     android:textSize="13sp" />
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:fontFamily="sans-serif-light"
                     android:id="@+id/editLocality"
                     android:textColor="#000000"
