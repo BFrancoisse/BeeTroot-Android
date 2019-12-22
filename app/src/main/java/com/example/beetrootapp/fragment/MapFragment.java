@@ -27,6 +27,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.ViewModel.FarmVM;
+import com.example.beetrootapp.adapter.CustomInfoWindowAdapter;
 import com.example.beetrootapp.model.Farm;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -98,6 +99,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         getDeviceLocation();
         map.setMyLocationEnabled(true);
         map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        map.setInfoWindowAdapter(new CustomInfoWindowAdapter(getContext()));
 
         insertFarmsOnMap();
         //map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lng),5));
