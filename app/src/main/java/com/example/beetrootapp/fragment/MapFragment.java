@@ -10,12 +10,17 @@ import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -47,6 +52,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
@@ -61,28 +67,37 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     private MapView mapView;
     private View view;
     double lat =0, lng=0;
+    private List<Farm> farmsMap;
 
     private FarmVM farmVM;
 
-    private SearchView searchView;
+    //SearchToolBar
+    private EditText searchtext;
 
     private FusedLocationProviderClient fusedLocationProviderClient;
+
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //setSearchView();
-        return inflater.inflate(R.layout.fragment_map,container,false);
+        View view = inflater.inflate(R.layout.fragment_map,container,false);
+        searchtext = (EditText)view.findViewById(R.id.input_search);
+        initSearchBar();
+        return view;
 
     }
+
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         locationPermission();
         buildGoogleApiClient();
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
-        //setSearchView();
+
     }
     private synchronized void buildGoogleApiClient() {
         this.googleApiClient = new GoogleApiClient.Builder(getContext())
@@ -104,8 +119,57 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         insertFarmsOnMap();
         //map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lng),5));
     }
+    private void initSearchBar(){
+        searchtext.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId == EditorInfo.IME_ACTION_SEARCH
+                        || actionId == EditorInfo.IME_ACTION_DONE
+                        || event.getAction() == KeyEvent.ACTION_DOWN
+                        || event.getAction() == KeyEvent.KEYCODE_ENTER)
+                {
+                    geoLocateFarm();
+                }
+                return false;
+            }
+        });
+    }
+    private void geoLocateFarm(){
+        String searchString = searchtext.getText().toString();
+
+        for(Farm farm : farmsMap){
+            if(farm.getName().equals(searchString))
+            {
+                String geographicCoordinates = farm.getGeographicCoordinates();
+                String[] splitGC = geographicCoordinates.split(",");
+                String lat = splitGC[0];
+                String lng = splitGC[1];
+                LatLng currentLatLng = new LatLng(Double.parseDouble(lat), Double.parseDouble(lng));
+                CameraUpdate update = CameraUpdateFactory.newLatLngZoom(currentLatLng,
+                        11);
+                map.animateCamera(update);
+                return ;
+            }
+        }
+        //boucler sur array list de ferme et movecamera dessus
+/*
+        Geocoder geocoder = new Geocoder(getActivity());
+        List<Address> list = new ArrayList<>();
+
+        try{
+            list = geocoder.getFromLocationName(searchString, 1 );
+
+        }catch(IOException e){
+            Log.e(TAG,"geolocate: IOException : " + e.getMessage());
+        }
+        if(list.size() > 0){
+            Address address = list.get(0);
+        }
+*/
+    }
 
     public void insertFarmsOnMap(){
+        farmsMap = new ArrayList();
         farmVM = ViewModelProviders.of(this).get(FarmVM.class);
         farmVM.getFarms().observe(this,farms -> {
             for(Farm farm:farms)
@@ -119,6 +183,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
                         .title(farm.getName())
                         .icon(bitmapDescriptorFromVector(getContext(),R.drawable.ic_store_mall_directory_black_24dp))
                         .snippet(farm.getDescription()));
+                farmsMap.add(farm);
             }
 
         });
@@ -167,7 +232,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
             mapView.onCreate(null);
             mapView.onResume();
             mapView.getMapAsync(this);
-            //setSearchView();
         }
     }
 
@@ -209,7 +273,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
 
     }
 
-    public void setSearchView(){
+    /*public void setSearchView(){
         searchView = searchView.findViewById(R.id.sv_location);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -238,7 +302,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         });
     }
 
-
+*/
     @Override
     public void onLocationChanged(Location location) {
        /* lastLocation = location;

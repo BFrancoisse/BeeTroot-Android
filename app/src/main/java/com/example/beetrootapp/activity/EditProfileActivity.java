@@ -2,6 +2,7 @@ package com.example.beetrootapp.activity;
 
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,9 +34,6 @@ public class EditProfileActivity extends AppCompatActivity {
     private UserVM userVM;
     private User currentUser;
     private UserRepository userRepository;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:checked="true"/>
-    <SearchView
+    <!--<SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sv_location"
@@ -17,5 +17,39 @@
         android:layout_margin="10dp"
         android:elevation="5dp"
         android:background="@drawable/bg_round"
-        />
+        />-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/bg_round"
+        android:id="@+id/search_bar"
+        >
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:id="@+id/ic_magnify"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_search"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/ic_magnify"
+            android:layout_centerVertical="true"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:id="@+id/input_search"
+            android:background="@null"
+            android:hint="@string/searchFarm"
+            android:imeOptions="actionSearch"
+            />
+
+</RelativeLayout>
+
+
 </RelativeLayout>
