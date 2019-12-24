@@ -1,16 +1,12 @@
 package com.example.beetrootapp.fragment;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -19,9 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
-import android.widget.SearchView;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -51,11 +46,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.*;
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 
 public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener{
@@ -63,16 +56,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
 
     private GoogleMap map;
     protected GoogleApiClient googleApiClient;
-    private Location lastLocation;
     private MapView mapView;
-    private View view;
-    double lat =0, lng=0;
     private List<Farm> farmsMap;
 
     private FarmVM farmVM;
 
     //SearchToolBar
     private EditText searchtext;
+    private ImageView searchMagnify;
+
+    private ImageView mGPS;
 
     private FusedLocationProviderClient fusedLocationProviderClient;
 
@@ -82,12 +75,19 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_map,container,false);
-        searchtext = (EditText)view.findViewById(R.id.input_search);
+        bindById(view);
         initSearchBar();
+        initClickListenerSearchMagnify();
+        initClickListenerGPS();
         return view;
 
     }
 
+    public void bindById(View view){
+        searchtext = (EditText)view.findViewById(R.id.input_search);
+        searchMagnify = (ImageView)view.findViewById(R.id.ic_magnify);
+        mGPS = (ImageView)view.findViewById(R.id.ic_gps);
+    }
 
 
     @Override
@@ -117,7 +117,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         map.setInfoWindowAdapter(new CustomInfoWindowAdapter(getContext()));
 
         insertFarmsOnMap();
-        //map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lng),5));
     }
     private void initSearchBar(){
         searchtext.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -134,11 +133,27 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
             }
         });
     }
+    public void initClickListenerSearchMagnify(){
+        searchMagnify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                geoLocateFarm();
+            }
+        });
+    }
+    public void initClickListenerGPS(){
+        mGPS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getDeviceLocation();
+            }
+        });
+    }
     private void geoLocateFarm(){
         String searchString = searchtext.getText().toString();
 
         for(Farm farm : farmsMap){
-            if(farm.getName().equals(searchString))
+            if((farm.getName()).toLowerCase().equals(searchString.toLowerCase()))
             {
                 String geographicCoordinates = farm.getGeographicCoordinates();
                 String[] splitGC = geographicCoordinates.split(",");
@@ -151,21 +166,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
                 return ;
             }
         }
-        //boucler sur array list de ferme et movecamera dessus
-/*
-        Geocoder geocoder = new Geocoder(getActivity());
-        List<Address> list = new ArrayList<>();
-
-        try{
-            list = geocoder.getFromLocationName(searchString, 1 );
-
-        }catch(IOException e){
-            Log.e(TAG,"geolocate: IOException : " + e.getMessage());
-        }
-        if(list.size() > 0){
-            Address address = list.get(0);
-        }
-*/
     }
 
     public void insertFarmsOnMap(){
@@ -210,6 +210,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         }
     }
+
     public void onConnected(Bundle bundle) {
         //lastLocation = LocationServices.FusedLocationApi.getLastLocation(
           //      googleApiClient);
@@ -273,36 +274,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
 
     }
 
-    /*public void setSearchView(){
-        searchView = searchView.findViewById(R.id.sv_location);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                String location = searchView.getQuery().toString();
-                List<Address> addressList = null;
 
-                if(location != null  || !location.equals("")){
-                    Geocoder geocoder = new Geocoder(getContext());
-                    try{
-                        addressList = geocoder.getFromLocationName(location, 1 );
-                    }catch(IOException e){
-                        e.printStackTrace();
-                    }
-                    Address address = addressList.get(0);
-                    LatLng latLng = new LatLng(address.getLatitude(),address.getLongitude());
-                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,10));
-                }
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
-    }
-
-*/
     @Override
     public void onLocationChanged(Location location) {
        /* lastLocation = location;
