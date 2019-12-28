@@ -32,9 +32,21 @@
     <string name="addReview">Rédiger un avis</string>
     <string name="direction">Itinéraire</string>
 
+    <string name="firstnameError">Entrez un prénom valide</string>
+    <string name="lastnameError">Entrez un nom valide</string>
+    <string name="emailError">Entrez un email valide</string>
+    <string name="phoneError">Entrez un numéro GSM valide</string>
+    <string name="numberHouseError">Entrez un numéro valide</string>
+    <string name="zipCodeError">Entrez un code postal valide</string>
+    <string name="localityError">Entrez une localité valide</string>
+    <string name="streetError">Entrez une rue valide</string>
+
     <string name="searchFarm">Rechercher une ferme...</string>
 
     <string name="km"> km</string>
+    <string name="doubleDots">: </string>
+
+    <string name="profileSave">Profil sauvegardé</string>
 
 
 

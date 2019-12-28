@@ -61,16 +61,21 @@ public class RecyclerViewProximityAdapter extends RecyclerView.Adapter<RecyclerV
 
 //        Glide.with(context).asBitmap().load("https://resultadosdigitais.com.br/blog/files/2018/01/url-amigavel.jpg").into(holder.imageFarm);
 
-
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                Toast.makeText(context,farms.get(position).getName() +context.getString(R.string.doubleDots)+ rating,Toast.LENGTH_LONG).show();
+            }
+        });
         phoneFarm.setText(farms.get(position).getUser().getPhone());
         nameFarm.setText(farms.get(position).getName());
         km.setText(String.format( "%.1f",farms.get(position).getDistance()) + context.getString(R.string.km));
-        parentLayout.setOnClickListener(new View.OnClickListener() {
+        /*parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context,farms.get(position).getName(),Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
 
     @Override

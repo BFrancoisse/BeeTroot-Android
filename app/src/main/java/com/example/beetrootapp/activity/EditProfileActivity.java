@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.ViewModel.UserVM;
 import com.example.beetrootapp.model.User;
@@ -31,6 +33,8 @@ public class EditProfileActivity extends AppCompatActivity {
     private EditText editZipCode;
     private EditText editLocality;
 
+    private AwesomeValidation awesomeValidation;
+
     private UserVM userVM;
     private User currentUser;
     private UserRepository userRepository;
@@ -39,6 +43,8 @@ public class EditProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -64,37 +70,15 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
    public void setEditTextValues(){
-        /*userVM = ViewModelProviders.of(this).get(UserVM.class);
-        userVM.getUserById().observe(this, user -> {
-            editFirstname.setText(user.getFirstname());
-            editLastname.setText(user.getLastname());
-            editEmail.setText(user.getEmail());
-            editPhone.setText(user.getPhone());
-            editStreet.setText(user.getAddress().getStreet());
-            editNumberHouse.setText(user.getAddress().getNumber());
-            editZipCode.setText("" + user.getAddress().getZipCode());
-            editLocality.setText(user.getAddress().getCity());
-            /*txtFirstname.setText(user.getFirstname());
-            txtFirstname.setText(user.getFirstname());
-            */
-        /*
-        });*/
 
-       //userVM = ViewModelProviders.of(this).get(UserVM.class);
-       //userVM.getUserById().observe(this, user -> {
            editFirstname.setText(currentUser.getFirstname());
            editLastname.setText(currentUser.getLastname());
            editEmail.setText(currentUser.getEmail());
            editPhone.setText(currentUser.getPhone());
            editStreet.setText(currentUser.getAddress().getStreet());
            editNumberHouse.setText(currentUser.getAddress().getNumber());
-           editZipCode.setText("" + currentUser.getAddress().getZipCode());
+           editZipCode.setText(String.valueOf(currentUser.getAddress().getZipCode()));
            editLocality.setText(currentUser.getAddress().getCity());
-            /*txtFirstname.setText(user.getFirstname());
-            txtFirstname.setText(user.getFirstname());
-            */
-       //});
-
     }
 
     public void setButtonSaveProfile(){
@@ -102,25 +86,24 @@ public class EditProfileActivity extends AppCompatActivity {
         saveProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Profil sauvegardé",Toast.LENGTH_LONG).show();
-                currentUser.setEmail(editEmail.getText().toString());
-                currentUser.setFirstname(editFirstname.getText().toString());
-                currentUser.setLastname(editLastname.getText().toString());
-                currentUser.setPhone(editPhone.getText().toString());
-                currentUser.getAddress().setStreet(editStreet.getText().toString());
-                currentUser.getAddress().setNumber(editNumberHouse.getText().toString());
-                currentUser.getAddress().setZipCode(Integer.parseInt(editZipCode.getText().toString()));
-                currentUser.getAddress().setCity(editLocality.getText().toString());
+                if (awesomeValidation.validate()) {
+                    Toast.makeText(getApplicationContext(), R.string.profileSave, Toast.LENGTH_LONG).show();
+                    currentUser.setEmail(editEmail.getText().toString());
+                    currentUser.setFirstname(editFirstname.getText().toString());
+                    currentUser.setLastname(editLastname.getText().toString());
+                    currentUser.setPhone(editPhone.getText().toString());
+                    currentUser.getAddress().setStreet(editStreet.getText().toString());
+                    currentUser.getAddress().setNumber(editNumberHouse.getText().toString());
+                    currentUser.getAddress().setZipCode(Integer.parseInt(editZipCode.getText().toString()));
+                    currentUser.getAddress().setCity(editLocality.getText().toString());
 
-                userRepository = new UserRepository();
-                userRepository.updateUser(currentUser);
+                    userRepository = new UserRepository();
+                    userRepository.updateUser(currentUser);
 
-                //User user = new User()
-
-
-                Intent intent = new Intent(getBaseContext(), UserInfoActivity.class);
-                startActivity(intent);
-                finish();
+                    Intent intent = new Intent(getBaseContext(), UserInfoActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
     }
@@ -133,5 +116,22 @@ public class EditProfileActivity extends AppCompatActivity {
         editNumberHouse = (EditText) findViewById(R.id.editNumberHouse);
         editZipCode = (EditText) findViewById(R.id.editZipCode);
         editLocality = (EditText) findViewById(R.id.editLocality);
+
+        awesomeValidation.addValidation(this, R.id.editFirstname, "^[a-zA-Z\\s]+$", R.string.firstnameError); // accepte pas les accents, à améliorer si temps
+        awesomeValidation.addValidation(this, R.id.editLastname, "^[a-zA-Z\\s]+$", R.string.lastnameError);
+
+        awesomeValidation.addValidation(this, R.id.editEmail, "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])", R.string.emailError);
+          //General Email Regex (RFC 5322 Official Standard)
+
+        awesomeValidation.addValidation(this, R.id.editPhone, "[0-9]{10}", R.string.phoneError);  //10
+
+        awesomeValidation.addValidation(this, R.id.editStreet, "(.*) (.*) (.*)", R.string.streetError);
+
+        awesomeValidation.addValidation(this, R.id.editNumberHouse, "^[a-zA-Z0-9_.-]*$", R.string.numberHouseError);
+
+        awesomeValidation.addValidation(this, R.id.editZipCode, "[0-9]{4}", R.string.zipCodeError);
+
+        awesomeValidation.addValidation(this, R.id.editLocality, "^^[a-zA-Z\\s]+$", R.string.localityError);
+
     }
 }

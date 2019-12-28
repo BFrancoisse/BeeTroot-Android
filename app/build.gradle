@@ -48,4 +48,6 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
     implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    implementation 'com.basgeekball:awesome-validation:4.2'
 }
