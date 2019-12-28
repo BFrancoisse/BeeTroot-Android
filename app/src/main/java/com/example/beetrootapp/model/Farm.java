@@ -14,8 +14,9 @@ public class Farm implements Serializable {
     private Catalog[] catalog;
     private Review[]review;
     private Picture []picture;
+    private float distance;
 
-    public Farm(int id, String name, String geographicCoordinates, String description, int addressId, int userId, Address address, User user, Catalog[] catalog, Review[] review, Picture[] picture) {
+    public Farm(int id, String name, String geographicCoordinates, String description, int addressId, int userId, Address address, User user, Catalog[] catalog, Review[] review, Picture[] picture, float distance) {
         this.id = id;
         this.name = name;
         this.geographicCoordinates = geographicCoordinates;
@@ -27,6 +28,15 @@ public class Farm implements Serializable {
         this.catalog = catalog;
         this.review = review;
         this.picture = picture;
+        this.distance=distance;
+    }
+
+    public float getDistance() {
+        return distance;
+    }
+
+    public void setDistance(float distance) {
+        this.distance = distance;
     }
 
     public int getId() {

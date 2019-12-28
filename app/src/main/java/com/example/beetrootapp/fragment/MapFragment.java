@@ -99,6 +99,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
 
     }
+
     private synchronized void buildGoogleApiClient() {
         this.googleApiClient = new GoogleApiClient.Builder(getContext())
                 .addConnectionCallbacks( this)

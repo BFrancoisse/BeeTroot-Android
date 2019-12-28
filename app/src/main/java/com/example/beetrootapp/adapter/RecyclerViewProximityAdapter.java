@@ -64,7 +64,7 @@ public class RecyclerViewProximityAdapter extends RecyclerView.Adapter<RecyclerV
 
         phoneFarm.setText(farms.get(position).getUser().getPhone());
         nameFarm.setText(farms.get(position).getName());
-        km.setText("10km");
+        km.setText(String.format( "%.1f",farms.get(position).getDistance()) + context.getString(R.string.km));
         parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
