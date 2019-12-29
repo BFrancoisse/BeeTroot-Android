@@ -11,6 +11,7 @@ import com.example.beetrootapp.model.User;
 public class UserVM extends androidx.lifecycle.ViewModel{
 
     private LiveData<User> userById;
+    private LiveData<Integer> userIdByEmail;
 
     public LiveData<User> getUserById(Context context) {
         userById = new MutableLiveData<>();
@@ -21,5 +22,11 @@ public class UserVM extends androidx.lifecycle.ViewModel{
    private LiveData<User> loadUserById(Context context){
        UserRepository userRepository = new UserRepository(context);
        return userRepository.getUserById();
+   }
+
+   public LiveData<Integer> getUserIdByEmail(Context context,String email){
+        userIdByEmail = new MutableLiveData<>();
+       UserRepository userRepository = new UserRepository(context);
+        return userIdByEmail = userRepository.getUserIdByEmail(email);
    }
 }

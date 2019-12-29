@@ -8,9 +8,12 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.beetrootapp.R;
+import com.example.beetrootapp.model.Farm;
 import com.example.beetrootapp.model.User;
 import com.example.beetrootapp.other.InternetChecking;
 import com.example.beetrootapp.service.UserService;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -96,6 +99,33 @@ public class UserRepository extends InternetChecking{
                 }
             });
         }
+    }
+
+    public LiveData<Integer> getUserIdByEmail(String email){
+        final MutableLiveData<Integer> mutableLiveData = new MutableLiveData<>();
+        if(!super.isNetworkAvailable())
+            Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
+        else {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(UserService.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            UserService userService = retrofit.create(UserService.class);
+            Call<Integer> call = userService.getUserIdByEmail(email);
+            call.enqueue(new Callback<Integer>() {
+                @Override
+                public void onResponse(Call<Integer> call, Response<Integer> response) {
+                    mutableLiveData.setValue(response.body());
+                }
+
+                @Override
+                public void onFailure(Call<Integer> call, Throwable t) {
+                    Toast.makeText(context.getApplicationContext(), R.string.getUserIdByEmailError, Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        return mutableLiveData;
+
     }
 
 

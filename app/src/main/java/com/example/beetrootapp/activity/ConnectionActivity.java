@@ -13,6 +13,7 @@ import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.ViewModel.JwtVM;
+import com.example.beetrootapp.ViewModel.UserVM;
 import com.example.beetrootapp.model.JwtToken;
 import com.example.beetrootapp.model.Login;
 
@@ -22,6 +23,7 @@ public class ConnectionActivity extends AppCompatActivity {
     private Button button_connection;
     private AwesomeValidation awesomeValidation;
     private JwtVM jwtVM;
+    private UserVM userVM;
 
 
     @Override
@@ -49,7 +51,6 @@ public class ConnectionActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
     public void getToken(){
         jwtVM = ViewModelProviders.of(this).get(JwtVM.class);

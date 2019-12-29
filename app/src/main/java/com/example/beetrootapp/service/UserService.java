@@ -15,10 +15,15 @@ public interface UserService {
     @GET("user/getUserById")
     Call<User> getUserById(@Query("id")Integer id);
 
+    @GET("user/getUserIdByEmail")
+    Call<Integer> getUserIdByEmail(@Query("email")String email);
+
     @PUT("user/updateUser")
     Call<User> updateUser(@Body User user);
 
     @POST("user/newUser")
     Call<User> newUser(@Body User user);
+
+
 
 }

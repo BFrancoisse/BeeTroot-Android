@@ -93,6 +93,7 @@
     <string name="updateUserError">Erreur lors de la mise à jour</string>
     <string name="newUserOk">Inscription confirmé</string>
     <string name="newUserError">Erreur lors de l inscription</string>
+    <string name="getUserIdByEmailError">Erreur de réception de données</string>
 
     <string name="editMyFarm">Editer ma ferme</string>
     <string name="editMyprofile">Editer mon profil</string>
