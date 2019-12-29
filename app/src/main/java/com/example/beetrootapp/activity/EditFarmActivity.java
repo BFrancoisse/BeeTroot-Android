@@ -50,7 +50,6 @@ public class EditFarmActivity extends AppCompatActivity {
         setButtonSave();
         setTitle("Editer ma ferme");
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem back) {
         int id = back.getItemId();
@@ -85,6 +84,7 @@ public class EditFarmActivity extends AppCompatActivity {
 
                     farmRepository = new FarmRepository();
                     //farmRepository.updateFarm(farm);
+                    // TODO : ajouter l'update d'une ferme à l'API
 
                     Intent intent = new Intent(getBaseContext(), FarmActivity.class);
                     startActivity(intent);
@@ -101,8 +101,12 @@ public class EditFarmActivity extends AppCompatActivity {
         editZipCode = (EditText) findViewById(R.id.editZipCode);
         editLocality = (EditText) findViewById(R.id.editLocality);
 
-        // Add validation
+        // TODO : Add validation
 
 
     }
+
+    // TODO : possibilité de changer la localisation GPS
+    // TODO : ajouter et supprimer des produits
+    // TODO : ajouter et supprimer des images
 }

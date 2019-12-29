@@ -29,4 +29,5 @@ public class HarvestActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(back);
     }
+    // TODO : implémenter le systeme de récoltes
 }

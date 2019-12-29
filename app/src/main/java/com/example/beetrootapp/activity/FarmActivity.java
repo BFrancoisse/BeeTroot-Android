@@ -1,6 +1,7 @@
 package com.example.beetrootapp.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -78,6 +79,7 @@ public class FarmActivity extends AppCompatActivity {
         txtAddress = (TextView) findViewById(R.id.txtAddress);
         txtDescription = (TextView) findViewById(R.id.txtDescription);
         farmPictures = (ImageView) findViewById(R.id.farmPictures);
+        // TODO : afficher images et produits proposés
     }
     public void setButtonEdit(){
         buttonEdit = (Button) findViewById(R.id.edit);
@@ -98,7 +100,9 @@ public class FarmActivity extends AppCompatActivity {
         buttonDirection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Ouvrir GMaps avec les bonnes coordonnées
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                        Uri.parse("http://maps.google.com/maps?daddr=" + farm.getGeographicCoordinates()));
+                startActivity(intent);
             }
         });
     }
@@ -108,7 +112,7 @@ public class FarmActivity extends AppCompatActivity {
         buttonReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Implémenter l'activity de rédaction de commentaire
+                // TODO : Implémenter l'activity de rédaction de commentaire
                 // Intent intent = new Intent(getBaseContext(), WriteReviewActivity.class);
                 //startActivity(intent);
             }
@@ -120,7 +124,7 @@ public class FarmActivity extends AppCompatActivity {
         buttonFavourite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Ajouter dans la DB un catalogue de fermes préférées
+                // TODO : Ajouter dans la DB un catalogue de fermes préférées
             }
         });
     }
