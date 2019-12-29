@@ -102,7 +102,7 @@ public class EditFarmActivity extends AppCompatActivity {
         editLocality = (EditText) findViewById(R.id.editLocality);
 
         // Add validation
-        
+
 
     }
 }

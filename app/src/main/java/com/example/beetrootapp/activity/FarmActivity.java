@@ -37,7 +37,6 @@ public class FarmActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Title");
         setContentView(R.layout.activity_farm);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
