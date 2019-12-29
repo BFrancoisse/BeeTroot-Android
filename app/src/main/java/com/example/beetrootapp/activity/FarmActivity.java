@@ -61,9 +61,9 @@ public class FarmActivity extends AppCompatActivity {
     }
     public void setTextViewValues() {
         userVM = ViewModelProviders.of(this).get(UserVM.class);
-        userVM.getUserById().observe(this, user -> this.user = user);
+        userVM.getUserById(getApplicationContext()).observe(this, user -> this.user = user);
         farmVM = ViewModelProviders.of(this).get(FarmVM.class);
-        farmVM.getFarmByUserId(3).observe(this, farm ->{
+        farmVM.getFarmByUserId(3,getApplicationContext()).observe(this, farm ->{
             txtFarmerName.setText(this.user.getFirstname());
             txtAddress.setText(farm.getAddress().getNumber() + " " + farm.getAddress().getStreet() + ", " + farm.getAddress().getZipCode() + " " + farm.getAddress().getCity());
             txtDescription.setText(farm.getDescription());

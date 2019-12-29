@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.beetrootapp.fragment.FavoritesFragment;
-import com.example.beetrootapp.fragment.HarvestFragment;
 import com.example.beetrootapp.fragment.MapFragment;
 import com.example.beetrootapp.fragment.ProximityFragment;
 import com.example.beetrootapp.R;

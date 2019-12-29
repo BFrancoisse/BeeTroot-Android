@@ -22,8 +22,8 @@ public class FarmVM extends androidx.lifecycle.ViewModel{
         return farms;
     }
 
-    public LiveData<Farm> getFarmByUserId(int id) {
-        FarmRepository farmRepository = new FarmRepository();
+    public LiveData<Farm> getFarmByUserId(int id,Context context) {
+        FarmRepository farmRepository = new FarmRepository(context);
         farm = new MutableLiveData<>();
         farm = farmRepository.getFarmByUserId(id);
         return farm;

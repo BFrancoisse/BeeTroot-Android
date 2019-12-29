@@ -82,7 +82,7 @@ public class EditFarmActivity extends AppCompatActivity {
                     currentFarm.getAddress().setZipCode(Integer.parseInt(editZipCode.getText().toString()));
                     currentFarm.getAddress().setCity(editLocality.getText().toString());
 
-                    farmRepository = new FarmRepository();
+                    farmRepository = new FarmRepository(getApplicationContext());
                     //farmRepository.updateFarm(farm);
                     // TODO : ajouter l'update d'une ferme à l'API
 

@@ -56,23 +56,28 @@ public class FarmRepository extends InternetChecking {
 
     public LiveData<Farm> getFarmByUserId(int id) {
         final MutableLiveData<Farm> mutableLiveData = new MutableLiveData<>();
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(FarmService.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        FarmService farmService = retrofit.create(FarmService.class);
-        Call<Farm> call = farmService.getFarmByUserId(id);
-        call.enqueue(new Callback<Farm>() {
-            @Override
-            public void onResponse(Call<Farm> call, Response<Farm> response) {
-                mutableLiveData.setValue(response.body());
-            }
+        if(!super.isNetworkAvailable())
+            Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
+        else {
 
-            @Override
-            public void onFailure(Call<Farm> call, Throwable t) {
-                Log.e("Get farm by ID", t.getMessage());
-            }
-        });
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(FarmService.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            FarmService farmService = retrofit.create(FarmService.class);
+            Call<Farm> call = farmService.getFarmByUserId(id);
+            call.enqueue(new Callback<Farm>() {
+                @Override
+                public void onResponse(Call<Farm> call, Response<Farm> response) {
+                    mutableLiveData.setValue(response.body());
+                }
+
+                @Override
+                public void onFailure(Call<Farm> call, Throwable t) {
+                    Log.e("Get farm by ID", t.getMessage());
+                }
+            });
+        }
         return mutableLiveData;
     }
 }
