@@ -7,10 +7,9 @@ android:layout_height="match_parent"
 tools:context=".activity.EditProfileActivity">
 
 <ScrollView
-    android:id="@+id/scroller_user_info"
+    android:id="@+id/scroller_edit_profile"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="3dp"
     android:fillViewport="true"
     android:scrollbarStyle="insideInset"
     android:scrollbars="vertical"
@@ -19,152 +18,33 @@ tools:context=".activity.EditProfileActivity">
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="30dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_coordonnees"
+                    android:layout_width="320dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:paddingBottom="15dp"
-                    android:text="@string/coordonnees"
-                    android:textColor="#000000"
-                    android:textSize="25sp"
-                    android:gravity="center"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/firstname"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp"
-                    android:gravity="center"/>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:fontFamily="sans-serif-light"
-                    android:id="@+id/editFirstname"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:layout_marginEnd="15dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/lastname"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp"
-                    />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:fontFamily="sans-serif-light"
-                    android:id="@+id/editLastname"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:layout_marginEnd="15dp"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/email"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:fontFamily="sans-serif-light"
-                    android:id="@+id/editEmail"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:layout_marginEnd="15dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/phone"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:fontFamily="sans-serif-light"
-                    android:id="@+id/editPhone"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:layout_marginEnd="15dp"/>
-
-            </LinearLayout>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:orientation="vertical"
-                    android:layout_margin="15dp">
+                    android:layout_marginEnd="25dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -174,137 +54,265 @@ tools:context=".activity.EditProfileActivity">
 
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
+                                android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-light"
-                                android:paddingBottom="1dp"
-                                android:text="@string/address"
+                                android:gravity="center"
+                                android:paddingBottom="15dp"
+                                android:text="@string/coordonnees"
                                 android:textColor="#000000"
-                                android:textSize="22sp" />
+                                android:textSize="25sp" />
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:text="@string/firstname"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/editFirstname"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="15dp"
+                                android:fontFamily="sans-serif-light"
                                 android:gravity="center"
+                                android:textColor="#000000"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/lastname"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/editLastname"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="15dp"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="center"
+                                android:textColor="#000000"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/email"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/editEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="15dp"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="center"
+                                android:textColor="#000000"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/phone"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/editPhone"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="15dp"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="center"
+                                android:textColor="#000000"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardview_coordonnees"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="0dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-light"
+                                android:gravity="center"
+                                android:paddingBottom="15dp"
+                                android:text="@string/address"
+                                android:textColor="#000000"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
                                 android:text="@string/street"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="16sp" />
 
                             <EditText
+                                android:id="@+id/editStreet"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:gravity="center"
+                                android:layout_marginEnd="15dp"
                                 android:fontFamily="sans-serif-light"
-                                android:id="@+id/editStreet"
+                                android:gravity="center"
                                 android:textColor="#000000"
-                                android:textSize="18sp"
-                                android:layout_marginEnd="15dp"/>
+                                android:textSize="18sp" />
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:gravity="center"
                                 android:text="@string/numberHouse"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="16sp" />
 
                             <EditText
+                                android:id="@+id/editNumberHouse"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:gravity="center"
+                                android:layout_marginEnd="15dp"
                                 android:fontFamily="sans-serif-light"
-                                android:id="@+id/editNumberHouse"
+                                android:gravity="center"
                                 android:textColor="#000000"
-                                android:textSize="18sp"
-                                android:layout_marginEnd="15dp"/>
+                                android:textSize="18sp" />
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:gravity="center"
                                 android:text="@string/zipCode"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="16sp" />
 
                             <EditText
+                                android:id="@+id/editZipCode"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:gravity="center"
+                                android:layout_marginEnd="15dp"
                                 android:fontFamily="sans-serif-light"
-                                android:id="@+id/editZipCode"
+                                android:gravity="center"
                                 android:textColor="#000000"
-                                android:textSize="18sp"
-                                android:layout_marginEnd="15dp"/>
+                                android:textSize="18sp" />
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:gravity="center"
                                 android:text="@string/locality"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="16sp" />
 
                             <EditText
+                                android:id="@+id/editLocality"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:gravity="center"
+                                android:layout_marginEnd="15dp"
                                 android:fontFamily="sans-serif-light"
-                                android:id="@+id/editLocality"
+                                android:gravity="center"
                                 android:textColor="#000000"
-                                android:textSize="18sp"
-                                android:layout_marginEnd="15dp"/>
+                                android:textSize="18sp" />
 
                         </LinearLayout>
 
-                </LinearLayout>
+                    </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-            <!-- Si l'utilisateur possède une ferme -->
-                <Button
-                style="@style/Widget.AppCompat.Button"
-                android:id="@+id/saveProfile"
-                android:layout_width="wrap_content"
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:padding="8dp"
-                android:text="Sauvegarder"
-                android:layout_gravity="center_vertical|center_horizontal"/>
-        </LinearLayout>
+                android:orientation="vertical">
 
-    </RelativeLayout>
+                <Button
+                    style="@style/Widget.AppCompat.Button"
+                    android:id="@+id/saveProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:text="@string/save"
+                    android:layout_gravity="center_vertical|center_horizontal" />
+            </LinearLayout>
+
+        </LinearLayout>
 
 </ScrollView>
 
