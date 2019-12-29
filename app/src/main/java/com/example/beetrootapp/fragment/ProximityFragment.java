@@ -1,14 +1,12 @@
 package com.example.beetrootapp.fragment;
 
-import android.content.Intent;
+
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,25 +17,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.ViewModel.FarmVM;
-import com.example.beetrootapp.activity.FarmActivity;
 import com.example.beetrootapp.adapter.RecyclerViewProximityAdapter;
 import com.example.beetrootapp.model.Farm;
-import com.example.beetrootapp.model.User;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 public class ProximityFragment extends Fragment {
 

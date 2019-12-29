@@ -133,14 +133,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
             }
         });
     }
-    /*public void initClickListenerGPS(){
-        mGPS.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getDeviceLocation();
-            }
-        });
-    }*/
+
     private void geoLocateFarm(){
         String searchString = searchtext.getText().toString();
 

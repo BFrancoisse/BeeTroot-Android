@@ -1,7 +1,6 @@
 package com.example.beetrootapp.repository;
 
 import android.content.Context;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.lifecycle.LiveData;
@@ -46,7 +45,7 @@ public class FarmRepository extends InternetChecking {
 
                 @Override
                 public void onFailure(Call<List<Farm>> call, Throwable t) {
-                    Log.e("Get All Farms", t.getMessage());
+                    Toast.makeText(context, R.string.getAllFarmsError, Toast.LENGTH_LONG).show();
                 }
             });
         }
@@ -74,7 +73,7 @@ public class FarmRepository extends InternetChecking {
 
                 @Override
                 public void onFailure(Call<Farm> call, Throwable t) {
-                    Log.e("Get farm by ID", t.getMessage());
+                    Toast.makeText(context, R.string.farmByIdError, Toast.LENGTH_LONG).show();
                 }
             });
         }
@@ -94,12 +93,12 @@ public class FarmRepository extends InternetChecking {
             call.enqueue(new Callback<Farm>() {
                 @Override
                 public void onResponse(Call<Farm> call, Response<Farm> response) {
-                    System.out.println("Ok update farm");
+                    Toast.makeText(context, R.string.updateFarmOk, Toast.LENGTH_LONG).show();
                 }
 
                 @Override
                 public void onFailure(Call<Farm> call, Throwable t) {
-                    System.out.println("failure");
+                    Toast.makeText(context, R.string.updateFarmError, Toast.LENGTH_LONG).show();
                 }
             });
         }

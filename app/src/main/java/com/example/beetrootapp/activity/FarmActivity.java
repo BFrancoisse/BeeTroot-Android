@@ -104,7 +104,7 @@ public class FarmActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                        Uri.parse("http://maps.google.com/maps?daddr=" + farm.getGeographicCoordinates()));
+                        Uri.parse(R.string.uriGoogleMap + farm.getGeographicCoordinates()));
                 startActivity(intent);
             }
         });

@@ -76,6 +76,30 @@
     <string name="settingsAccount">Paramètre du compte</string>
     <string name="logout">Déconnection</string>
     <string name="connectionFailded">Email/Mdp incorrect</string>
+    <string name="deleteFromFavoris">Supprimé des Favoris!</string>
+    <string name="addToFavoris">Ajouté au favoris!</string>
+
+    <string name="getAllFarmsError">Erreur de recupération des fermes</string>
+    <string name="farmByIdError">Erreur de recupération de la ferme</string>
+    <string name="updateFarmError">Erreur lors de la modification</string>
+    <string name="updateFarmOk">Mise à jour ferme effectué</string>
+    <string name="getAllLikesError">Erreur de recupération des favoris</string>
+    <string name="newLikeOk">Ajouté aux favoris!</string>
+    <string name="newLikeError">Erreur d ajout aux favoris</string>
+    <string name="deleteLikeOk">Suppression du favoris validé</string>
+    <string name="deleteLikeError">Erreur de suppression du favoris</string>
+    <string name="getUserByIdError">Erreur lors de la recupération des données</string>
+    <string name="updateUserOk">Mise à jour effectuée</string>
+    <string name="updateUserError">Erreur lors de la mise à jour</string>
+    <string name="newUserOk">Inscription confirmé</string>
+    <string name="newUserError">Erreur lors de l inscription</string>
+
+    <string name="editMyFarm">Editer ma ferme</string>
+    <string name="editMyprofile">Editer mon profil</string>
+    <string name="myProfile">Mon profil</string>
+
+    <string name="uriGoogleMap">http://maps.google.com/maps?daddr=</string>
+    <string name="harvest">Récolte</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

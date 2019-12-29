@@ -33,7 +33,7 @@ public class UserInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Mon profil");
+        setTitle(R.string.myProfile);
         setContentView(R.layout.activity_user_info);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);

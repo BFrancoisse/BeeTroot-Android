@@ -11,14 +11,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dcd15f9-4ecc-4eb1-9ef0-f71e9b7d95af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/JwtVM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/JwtToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/FarmVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/FarmVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/JwtVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/JwtVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/LikeVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/LikeVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/ConnectionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/ConnectionActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/MapsActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/LoginRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/JwtRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/EditFarmActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/EditFarmActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/EditProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/EditProfileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/FarmActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/FarmActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/HarvestActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/HarvestActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/UserInfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/UserInfoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/CustomInfoWindowAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/CustomInfoWindowAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/RecyclerViewFavoritesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/RecyclerViewFavoritesAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/RecyclerViewProximityAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/RecyclerViewProximityAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/FavoritesFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/FavoritesFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/MapFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/MapFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/ProximityFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/ProximityFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/FarmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/FarmRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/LikeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/LikeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/FarmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/FarmService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/../.gradle/" />
@@ -46,19 +59,45 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-29/com/android/internal/policy/DecorView.java">
+        <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="369" selection-start-line="369" selection-end-line="369" />
+            <state relative-caret-position="467">
+              <caret line="94" column="49" selection-start-line="94" selection-start-column="49" selection-end-line="94" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/JwtRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="1530">
+              <caret line="92" column="25" lean-forward="true" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1724#1749#0" expanded="true" />
+                <element signature="e#2631#2652#0" expanded="true" />
+                <element signature="e#2864#2888#0" expanded="true" />
+                <element signature="e#3725#3743#0" expanded="true" />
+                <element signature="e#3955#3976#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/FarmService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/JwtService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,80 +106,64 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-29/com/android/internal/policy/PhoneWindow.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/LikeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="1838" selection-start-line="1838" selection-end-line="1838" />
+            <state relative-caret-position="68">
+              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-29/android/app/Activity.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="3953" selection-start-line="3953" selection-end-line="3953" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.core/core/1.1.0/4ae37fad1fe95b42aa47a720908df37ba5d3c85e/core-1.1.0-sources.jar!/androidx/core/app/ComponentActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="132" selection-start-line="132" selection-end-line="132" />
+            <state relative-caret-position="187">
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
               <folding>
-                <element signature="e#3765#3766#0" expanded="true" />
-                <element signature="e#3817#3818#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.1.0/9865019bbd2d95e41dede3d8ebf964aa93f97766/appcompat-1.1.0-sources.jar!/androidx/appcompat/app/AppCompatActivity.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/FarmVM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="557" selection-start-line="557" selection-end-line="557" />
+            <state relative-caret-position="34">
+              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.1.0/9865019bbd2d95e41dede3d8ebf964aa93f97766/appcompat-1.1.0-sources.jar!/androidx/appcompat/view/WindowCallbackWrapper.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/JwtVM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
               <folding>
-                <element signature="e#1904#1905#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.1.0/9865019bbd2d95e41dede3d8ebf964aa93f97766/appcompat-1.1.0-sources.jar!/androidx/appcompat/app/AppCompatDelegateImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/LikeVM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="2812" selection-start-line="2812" selection-end-line="2812" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.core/core/1.1.0/4ae37fad1fe95b42aa47a720908df37ba5d3c85e/core-1.1.0-sources.jar!/androidx/core/view/KeyEventDispatcher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
+            <state relative-caret-position="425">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/ConnectionActivity.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/UserVM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="60" column="19" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="19" />
+            <state relative-caret-position="34">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -163,7 +186,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Adress</find>
       <find>Ferme:</find>
       <find>userById</find>
       <find>userVM</find>
@@ -193,6 +215,7 @@
       <find>parent_layout</find>
       <find>toast</find>
       <find>observ</find>
+      <find>Toast</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -201,62 +224,62 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_edit_profile.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout-land/activity_edit_profile.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout-land/activity_user_info.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/other/NetworkConnectionAvailable.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_map.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Farm.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Like.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/LikeRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/LikeVM.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_proximity.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_favorites.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/list_likes.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/layout_list_likes.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/custom_info_window.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/CustomInfoWindowAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/LikeService.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/layout_list_proximity.xml" />
         <option value="$PROJECT_DIR$/src/main/res/drawable/buttonshape.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/ProximityFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/UserVM.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/other/InternetChecking.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_start.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/StartActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/RecyclerViewProximityAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/MapFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/InscriptionActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/UserInfoActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/EditProfileActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/RecyclerViewFavoritesAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/FavoritesFragment.java" />
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/FarmVM.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/EditFarmActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/FarmActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/MapsActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/menu/nav_menu.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/FarmRepository.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_inscription.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_connection.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/LoginRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/JwtService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Login.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/JwtToken.java" />
-        <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/JwtVM.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/JwtRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/ConnectionActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/EditFarmActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/EditProfileActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/FarmActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/HarvestActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/UserInfoActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/CustomInfoWindowAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/RecyclerViewFavoritesAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/RecyclerViewProximityAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/FavoritesFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/MapFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/ProximityFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/FarmRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/LikeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/FarmService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/FarmVM.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/JwtVM.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/LikeVM.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="952" />
     <option name="width" value="977" />
     <option name="height" value="1088" />
   </component>
@@ -346,6 +369,12 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="mipmap" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="BeeTrootApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="BeeTrootApp" type="1abcf292:AndroidViewProjectNode" />
@@ -574,7 +603,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577633517852</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="ajout connexion via token">
+      <created>1577642003129</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1577642003129</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView">
@@ -588,9 +624,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.06122449" side_tool="true" weight="0.2554585" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.65" visible="true" weight="0.15369128" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.65" visible="true" weight="0.15369128" />
       <window_info id="Structure" order="2" sideWeight="0.35" side_tool="true" weight="0.19530201" />
       <window_info id="Build Variants" order="3" sideWeight="0.34918478" side_tool="true" weight="0.12473348" />
       <window_info id="Image Layers" order="4" />
@@ -603,7 +640,7 @@
       <window_info anchor="bottom" id="Logcat" order="2" weight="0.36461127" />
       <window_info anchor="bottom" id="TODO" order="3" weight="0.32917964" />
       <window_info anchor="bottom" id="Android Profiler" order="4" />
-      <window_info active="true" anchor="bottom" id="Debug" order="5" visible="true" weight="0.36461127" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.36461127" />
       <window_info anchor="bottom" id="Terminal" order="6" weight="0.3288201" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32841823" />
@@ -617,6 +654,35 @@
       <window_info anchor="right" id="Preview" order="5" />
       <window_info anchor="right" id="Assistant" order="6" weight="0.3295302" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Captures" order="0" sideWeight="0.06122449" side_tool="true" weight="0.2554585" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.65" visible="true" weight="0.15369128" />
+      <window_info id="Structure" order="2" sideWeight="0.35" side_tool="true" weight="0.19530201" />
+      <window_info id="Build Variants" order="3" sideWeight="0.34918478" side_tool="true" weight="0.12473348" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Designer" order="5" />
+      <window_info id="Resources Explorer" order="6" weight="0.32825485" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Favorites" order="8" side_tool="true" weight="0.3295302" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.3297587" />
+      <window_info anchor="bottom" id="Run" order="1" visible="true" weight="0.25201073" />
+      <window_info anchor="bottom" id="Logcat" order="2" weight="0.36461127" />
+      <window_info anchor="bottom" id="TODO" order="3" weight="0.32917964" />
+      <window_info anchor="bottom" id="Android Profiler" order="4" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.36461127" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.3288201" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32841823" />
+      <window_info anchor="bottom" id="Build" order="9" weight="0.27479893" />
+      <window_info anchor="bottom" id="Find" order="10" weight="0.3297587" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Preview" order="5" />
+      <window_info anchor="right" id="Assistant" order="6" weight="0.3295302" />
+    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="début POST updateUser" />
@@ -634,7 +700,8 @@
     <MESSAGE value="ajout @string du nav menu" />
     <MESSAGE value="ajout gestion perte de connection sur get farm by user ID + ajout @string pour nav menu" />
     <MESSAGE value="ajout mot de passe en caché dans Connection, Inscription activity" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout mot de passe en caché dans Connection, Inscription activity" />
+    <MESSAGE value="ajout connexion via token" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout connexion via token" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -659,21 +726,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/ConnectionActivity.java</url>
-          <line>48</line>
+          <line>46</line>
           <properties />
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/JwtRepository.java</url>
-          <line>27</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/ConnectionActivity.java</url>
-          <line>57</line>
-          <properties />
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -685,352 +740,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/StartActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/UserInfoActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1411">
-          <caret line="13" column="58" selection-start-line="13" selection-start-column="58" selection-end-line="13" selection-end-column="58" />
-          <folding>
-            <element signature="e#1538#1551#0" expanded="true" />
-            <element signature="e#1552#1566#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/menu/bottom_navigation.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="e#237#256#0" expanded="true" />
-            <element signature="e#379#392#0" expanded="true" />
-            <element signature="e#528#547#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/menu/nav_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-          <folding>
-            <element signature="e#160#174#0" expanded="true" />
-            <element signature="e#298#314#0" expanded="true" />
-            <element signature="e#464#490#0" expanded="true" />
-            <element signature="e#615#640#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/MapFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_inscription.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="91" column="48" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_connection.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="66" column="36" lean-forward="true" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/LikeRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="54" column="41" lean-forward="true" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/LoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/LoginRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/LikeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/MapsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Picture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="44" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/CustomInfoWindowAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/RecyclerViewFavoritesAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-392">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/RecyclerViewProximityAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-          <folding>
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
-            <element signature="e#328#329#0" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/InscriptionActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="73" column="13" lean-forward="true" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/EditFarmActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="98" column="22" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="75" column="56" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/JwtService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/LikeVM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="22" column="53" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="22" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/FarmVM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/FarmService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/ProximityFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="56" column="44" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-29/android/os/Looper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2556">
-          <caret line="219" selection-start-line="219" selection-end-line="219" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/JwtToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/UserVM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/FarmActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="73" column="11" lean-forward="true" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/EditProfileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="73" column="95" lean-forward="true" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="95" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2276#2291#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/FavoritesFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="42" column="63" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/FarmRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-322">
-          <caret line="29" column="84" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/JwtVM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-29/android/widget/TextView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="8585" selection-start-line="8585" selection-end-line="8585" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-29/android/view/KeyEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -1101,13 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.1.0/9865019bbd2d95e41dede3d8ebf964aa93f97766/appcompat-1.1.0-sources.jar!/androidx/appcompat/app/AppCompatDelegateImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="2812" selection-start-line="2812" selection-end-line="2812" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-29/android/view/ViewRootImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1122,20 +824,385 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/JwtRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/ConnectionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="309">
+          <caret line="65" column="56" lean-forward="true" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2025#2044#0" expanded="true" />
+            <element signature="e#2128#2150#0" expanded="true" />
+            <element signature="e#3050#3076#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.1.0/9865019bbd2d95e41dede3d8ebf964aa93f97766/appcompat-1.1.0-sources.jar!/androidx/appcompat/app/AppCompatDelegateImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="2812" selection-start-line="2812" selection-end-line="2812" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/EditProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="131" column="76" lean-forward="true" selection-start-line="131" selection-start-column="76" selection-end-line="131" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1694#1716#0" expanded="true" />
+            <element signature="e#2276#2291#0" expanded="true" />
+            <element signature="e#4980#5003#0" expanded="true" />
+            <element signature="e#5138#5160#0" expanded="true" />
+            <element signature="e#5859#5878#0" expanded="true" />
+            <element signature="e#5969#5989#0" expanded="true" />
+            <element signature="e#6082#6107#0" expanded="true" />
+            <element signature="e#6187#6208#0" expanded="true" />
+            <element signature="e#6296#6318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/FarmActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-881">
+          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3995#4016#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/InscriptionActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="67" column="60" lean-forward="true" selection-start-line="67" selection-start-column="60" selection-end-line="67" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1683#1706#0" expanded="true" />
+            <element signature="e#1841#1863#0" expanded="true" />
+            <element signature="e#2558#2580#0" expanded="true" />
+            <element signature="e#2671#2700#0" expanded="true" />
+            <element signature="e#3515#3535#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/HarvestActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="66" lean-forward="true" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
+          <folding>
+            <element signature="e#590#606#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/StartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1003">
+          <caret line="37" column="89" lean-forward="true" selection-start-line="37" selection-start-column="89" selection-end-line="37" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1524#1537#0" expanded="true" />
+            <element signature="e#1538#1552#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/UserInfoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1094#1112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/RecyclerViewFavoritesAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="52" column="54" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2604#2630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/CustomInfoWindowAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/adapter/RecyclerViewProximityAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3248#3269#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/FavoritesFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/MapFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1513">
+          <caret line="135" column="3" selection-start-line="135" selection-start-column="3" selection-end-line="135" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/ConnectionActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/fragment/ProximityFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="60" column="19" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="19" />
+        <state relative-caret-position="476">
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Address.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Catalog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Farm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Harvest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/JwtToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Picture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="44" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/Review.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-813">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/other/InternetChecking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/activity/EditFarmActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="76" column="20" lean-forward="true" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="106" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4500#4521#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/FarmRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3796#3817#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/LikeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+          <folding>
+            <element signature="e#960#979#0" expanded="true" />
+            <element signature="e#1804#1829#0" expanded="true" />
+            <element signature="e#2133#2152#0" expanded="true" />
+            <element signature="e#2727#2745#0" expanded="true" />
+            <element signature="e#2957#2978#0" expanded="true" />
+            <element signature="e#3337#3356#0" expanded="true" />
+            <element signature="e#3829#3850#0" expanded="true" />
+            <element signature="e#4062#4086#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/JwtRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="29" column="107" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="107" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#944#963#0" expanded="true" />
+            <element signature="e#1742#1768#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="94" column="49" selection-start-line="94" selection-start-column="49" selection-end-line="94" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="92" column="25" lean-forward="true" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1724#1749#0" expanded="true" />
+            <element signature="e#2631#2652#0" expanded="true" />
+            <element signature="e#2864#2888#0" expanded="true" />
+            <element signature="e#3725#3743#0" expanded="true" />
+            <element signature="e#3955#3976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/FarmService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/JwtService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/LikeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/FarmVM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/JwtVM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/LikeVM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/beetrootapp/ViewModel/UserVM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

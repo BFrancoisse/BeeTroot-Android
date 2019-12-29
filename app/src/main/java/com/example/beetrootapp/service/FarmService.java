@@ -1,7 +1,6 @@
 package com.example.beetrootapp.service;
 
 import com.example.beetrootapp.model.Farm;
-import com.example.beetrootapp.model.User;
 
 import java.util.List;
 

@@ -48,7 +48,7 @@ public class EditFarmActivity extends AppCompatActivity {
         setEditTextValues();
 
         setButtonSave();
-        setTitle("Editer ma ferme");
+        setTitle(R.string.editFarm);
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem back) {

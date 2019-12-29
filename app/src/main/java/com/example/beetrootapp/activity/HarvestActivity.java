@@ -18,7 +18,7 @@ public class HarvestActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        setTitle("Récolte");
+        setTitle(R.string.harvest);
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem back) {

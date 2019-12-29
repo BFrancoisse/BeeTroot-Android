@@ -14,14 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.ViewModel.FarmVM;
-import com.example.beetrootapp.ViewModel.LikeVM;
 import com.example.beetrootapp.adapter.RecyclerViewFavoritesAdapter;
-import com.example.beetrootapp.adapter.RecyclerViewProximityAdapter;
 import com.example.beetrootapp.model.Farm;
-import com.example.beetrootapp.model.Like;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FavoritesFragment extends Fragment {
     //private List<Like> likedFarm;
