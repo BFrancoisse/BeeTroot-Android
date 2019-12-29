@@ -53,7 +53,6 @@ import java.util.List;
 
 public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener{
 
-
     private GoogleMap map;
     protected GoogleApiClient googleApiClient;
     private MapView mapView;
@@ -69,8 +68,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
 
     private FusedLocationProviderClient fusedLocationProviderClient;
 
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -80,16 +77,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         initClickListenerSearchMagnify();
         //initClickListenerGPS();
         return view;
-
     }
-
     public void bindById(View view){
         searchtext = (EditText)view.findViewById(R.id.input_search);
         searchMagnify = (ImageView)view.findViewById(R.id.ic_magnify);
         //mGPS = (ImageView)view.findViewById(R.id.ic_gps);
     }
-
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,7 +92,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
 
     }
-
     private synchronized void buildGoogleApiClient() {
         this.googleApiClient = new GoogleApiClient.Builder(getContext())
                 .addConnectionCallbacks( this)
@@ -107,7 +99,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
                 .addApi(LocationServices.API)
                 .build();
     }
-
     @Override
     public void onMapReady(GoogleMap googleMap) {
         MapsInitializer.initialize((getContext()));
@@ -168,7 +159,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
             }
         }
     }
-
     public void insertFarmsOnMap(){
         farmsMap = new ArrayList();
         farmVM = ViewModelProviders.of(this).get(FarmVM.class);
@@ -182,14 +172,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
                 map.addMarker(new MarkerOptions()
                         .position(new LatLng(Double.parseDouble(lat), Double.parseDouble(lng)))
                         .title(farm.getName())
-                        .icon(bitmapDescriptorFromVector(getContext(),R.drawable.ic_store_mall_directory_black_24dp))
+                        .icon(bitmapDescriptorFromVector(getContext(),R.drawable.ic_store_black_35dp))
                         .snippet(farm.getDescription()));
                 farmsMap.add(farm);
             }
-
         });
     }
-
     //Custom Marker
     private BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId){
         Drawable vectorDrawable= ContextCompat.getDrawable(context,vectorResId);
@@ -199,19 +187,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         vectorDrawable.draw(canvas);
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
-
-
-
-
-
-
-
     void locationPermission() {
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         }
     }
-
     public void onConnected(Bundle bundle) {
         //lastLocation = LocationServices.FusedLocationApi.getLastLocation(
           //      googleApiClient);
@@ -225,9 +205,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     }
     @Override
     public void onConnectionSuspended(int i) {
-
+        // TODO
     }
-
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         mapView = view.findViewById(R.id.map_view);
         if(mapView != null){
@@ -236,57 +215,43 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
             mapView.getMapAsync(this);
         }
     }
-
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
+        // TODO
     }
-
     @Override
     public void onResume() {
         mapView.onResume();
         super.onResume();
     }
-
-
     @Override
     public void onPause() {
         super.onPause();
         mapView.onPause();
     }
-
     @Override
     public void onDestroy() {
         super.onDestroy();
         mapView.onDestroy();
     }
-
     @Override
     public void onLowMemory() {
         super.onLowMemory();
         mapView.onLowMemory();
     }
-
     @Override
     public void onStart() {
-
         googleApiClient.connect();
         super.onStart();
-
     }
-
-
     @Override
     public void onLocationChanged(Location location) {
        /* lastLocation = location;
         lat= location.getLatitude();
         lng = location.getLongitude();*/
     }
-
-
     private void getDeviceLocation(){
         try {
-
                 Task<Location> locationResult = fusedLocationProviderClient.getLastLocation();
                 locationResult.addOnCompleteListener(new OnCompleteListener<Location>() {
                     @Override
@@ -301,10 +266,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
                         }
                     }
                 });
-
         } catch (SecurityException e) {
             Log.e("Exception: %s", e.getMessage());
         }
     }
 }
-
