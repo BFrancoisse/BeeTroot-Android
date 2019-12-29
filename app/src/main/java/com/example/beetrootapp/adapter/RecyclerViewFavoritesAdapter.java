@@ -1,6 +1,7 @@
 package com.example.beetrootapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beetrootapp.R;
+import com.example.beetrootapp.activity.FarmActivity;
 import com.example.beetrootapp.model.Farm;
 import com.example.beetrootapp.model.Like;
 
@@ -30,7 +32,7 @@ public class RecyclerViewFavoritesAdapter extends RecyclerView.Adapter<RecyclerV
     TextView nameFarm;
     TextView phoneFarm;
     ImageView fav;
-    RelativeLayout parentLayout;
+    RelativeLayout farmItem;
 
     public RecyclerViewFavoritesAdapter(ArrayList<Farm> likes, Context context) {
         super();
@@ -53,7 +55,7 @@ public class RecyclerViewFavoritesAdapter extends RecyclerView.Adapter<RecyclerV
         nameFarm = (TextView)holder.itemView.findViewById(R.id.farm_name);
         phoneFarm = (TextView)holder.itemView.findViewById(R.id.farm_phone);
         fav = (ImageView)holder.itemView.findViewById(R.id.fav);
-        parentLayout = holder.itemView.findViewById(R.id.parent_layout_favorites);
+        farmItem = holder.itemView.findViewById(R.id.parent_layout_favorites);
 
 //        Glide.with(context).asBitmap().load("https://resultadosdigitais.com.br/blog/files/2018/01/url-amigavel.jpg").into(holder.imageFarm);
 
@@ -68,6 +70,15 @@ public class RecyclerViewFavoritesAdapter extends RecyclerView.Adapter<RecyclerV
             public void onClick(View v) {
                 likes.remove((likes.get(position)));
                 Toast.makeText(context, "Supprimé des Favoris!", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        farmItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openFarmActivity = new Intent(v.getContext(), FarmActivity.class);
+                openFarmActivity.putExtra("farmerId", likes.get(position).getUserId());
+                v.getContext().startActivity(openFarmActivity);
             }
         });
     }
