@@ -75,6 +75,7 @@
     <string name="harvestProximity">Glanage à proximité</string>
     <string name="settingsAccount">Paramètre du compte</string>
     <string name="logout">Déconnection</string>
+    <string name="connectionFailded">Email/Mdp incorrect</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
