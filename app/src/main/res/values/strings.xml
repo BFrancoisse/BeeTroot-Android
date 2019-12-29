@@ -14,7 +14,7 @@
     <string name="close">Close</string>
     <string name="save">Enregistrer</string>
 
-    <string name="informations">Informations :</string>
+    <string name="coordonnees">Coordonnées</string>
     <string name="firstname">Prénom</string>
     <string name="lastname">Nom</string>
     <string name="email">Adresse mail</string>
@@ -24,7 +24,7 @@
     <string name="numberHouse">Numéro de maison</string>
     <string name="zipCode">Code postal</string>
     <string name="locality">Localité</string>
-    <string name="farm">Ferme :</string>
+    <string name="farm">Ferme</string>
     <string name="farmName">Nom de la ferme</string>
     <string name="phoneFarm">Numéro de téléphone</string>
 
