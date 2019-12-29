@@ -29,22 +29,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //navigation drawer
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close);
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        NavigationView navigationView = (NavigationView)findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        //bottom navigation
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.nav_cart);
-        bottomNavigationView.setOnNavigationItemSelectedListener( navListener);
+        setNavigationDrawer();
+        setBottomNavigation();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new MapFragment()).commit();
     }
+   public void setNavigationDrawer(){
+       drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+       actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close);
+       drawerLayout.addDrawerListener(actionBarDrawerToggle);
+       actionBarDrawerToggle.syncState();
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       NavigationView navigationView = (NavigationView)findViewById(R.id.navigation_view);
+       navigationView.setNavigationItemSelectedListener(this);
+    }
+    public void setBottomNavigation(){
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.nav_cart);
+        bottomNavigationView.setOnNavigationItemSelectedListener( navListener);
+    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -100,11 +104,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            case R.id.settings:
                /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                        new SettingsFragment()).commit();*/
-               Intent intent = new Intent(this, UserInfoActivity.class);
-               startActivity(intent);
-
+               Intent settings = new Intent(this, UserInfoActivity.class);
+               startActivity(settings);
                break;
-            //déconnection
+           case R.id.logout:
+               Intent logout = new Intent(this, StartActivity.class);
+               startActivity(logout);
+                finish();
+               break;
 
        }
        drawerLayout.closeDrawer(GravityCompat.START);

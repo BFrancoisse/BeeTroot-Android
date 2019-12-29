@@ -60,7 +60,6 @@ public class EditProfileActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        int id = item.getItemId();
         if(item.getItemId() == 16908332) {
             Intent intent = new Intent(this, UserInfoActivity.class);
             startActivity(intent);
@@ -70,15 +69,18 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
    public void setEditTextValues(){
-
-           editFirstname.setText(currentUser.getFirstname());
-           editLastname.setText(currentUser.getLastname());
-           editEmail.setText(currentUser.getEmail());
-           editPhone.setText(currentUser.getPhone());
-           editStreet.setText(currentUser.getAddress().getStreet());
-           editNumberHouse.setText(currentUser.getAddress().getNumber());
-           editZipCode.setText(String.valueOf(currentUser.getAddress().getZipCode()));
-           editLocality.setText(currentUser.getAddress().getCity());
+        if(currentUser == null)
+            Toast.makeText(getApplicationContext(), R.string.noData, Toast.LENGTH_LONG).show();
+         else {
+            editFirstname.setText(currentUser.getFirstname());
+            editLastname.setText(currentUser.getLastname());
+            editEmail.setText(currentUser.getEmail());
+            editPhone.setText(currentUser.getPhone());
+            editStreet.setText(currentUser.getAddress().getStreet());
+            editNumberHouse.setText(currentUser.getAddress().getNumber());
+            editZipCode.setText(String.valueOf(currentUser.getAddress().getZipCode()));
+            editLocality.setText(currentUser.getAddress().getCity());
+        }
     }
 
     public void setButtonSaveProfile(){
@@ -97,7 +99,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     currentUser.getAddress().setZipCode(Integer.parseInt(editZipCode.getText().toString()));
                     currentUser.getAddress().setCity(editLocality.getText().toString());
 
-                    userRepository = new UserRepository();
+                    userRepository = new UserRepository(getApplicationContext());
                     userRepository.updateUser(currentUser);
 
                     Intent intent = new Intent(getBaseContext(), UserInfoActivity.class);

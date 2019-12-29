@@ -22,4 +22,6 @@ public interface LikeService {
 
     @DELETE("like/deleteLike")
     Call<Like> deleteLike(@Body Like like);
+
+
 }

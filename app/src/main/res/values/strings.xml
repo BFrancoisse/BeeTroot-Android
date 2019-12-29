@@ -40,6 +40,10 @@
     <string name="zipCodeError">Entrez un code postal valide</string>
     <string name="localityError">Entrez une localité valide</string>
     <string name="streetError">Entrez une rue valide</string>
+    <string name="confirmPasswordError">Mot de passe différent</string>
+    <string name="passwordError">Entrez un mot de passe valide (min 8)</string>
+
+    <string name="noData">Erreur Chargement info</string>
 
     <string name="searchFarm">Rechercher une ferme...</string>
 
@@ -48,7 +52,12 @@
 
     <string name="profileSave">Profil sauvegardé</string>
 
+    <string name="noInternet">Pas de Connection Internet !</string>
+    <string name="connection">Connexion</string>
+    <string name="inscription">Inscription</string>
 
+    <string name="password">Mot de passe</string>
+    <string name="confirmPassword">Confirmation mot de passe</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

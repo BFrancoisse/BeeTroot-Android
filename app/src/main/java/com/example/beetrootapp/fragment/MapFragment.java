@@ -172,7 +172,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     public void insertFarmsOnMap(){
         farmsMap = new ArrayList();
         farmVM = ViewModelProviders.of(this).get(FarmVM.class);
-        farmVM.getFarms().observe(this,farms -> {
+        farmVM.getFarms(getContext()).observe(this,farms -> {
             for(Farm farm:farms)
             {
                 String geographicCoordinates = farm.getGeographicCoordinates();
@@ -213,15 +213,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     }
 
     public void onConnected(Bundle bundle) {
-        //lastLocation = LocationServices.FusedLocationApi.getLastLocation(
-          //      googleApiClient);
-       /* if (lastLocation != null) {
-            lat = lastLocation.getLatitude();
-            lng = lastLocation.getLongitude();
-
-            loc = new LatLng(lat, lng);
-
-        }*/
     }
     @Override
     public void onConnectionSuspended(int i) {
@@ -278,9 +269,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
 
     @Override
     public void onLocationChanged(Location location) {
-       /* lastLocation = location;
-        lat= location.getLatitude();
-        lng = location.getLongitude();*/
     }
 
 

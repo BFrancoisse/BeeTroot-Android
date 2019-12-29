@@ -54,7 +54,7 @@ public class ProximityFragment extends Fragment {
         farmsProximity = new ArrayList<>();
 
         farmVM = ViewModelProviders.of(this).get(FarmVM.class);
-        farmVM.getFarms().observe(this, farms -> {
+        farmVM.getFarms(getContext()).observe(this, farms -> {
             farmsProximity = (ArrayList<Farm>) farms;
             getDistancesBetweenUserFarm();
             initRecyclerView();

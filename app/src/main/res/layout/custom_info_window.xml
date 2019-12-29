@@ -27,6 +27,5 @@
             android:textSize="14sp"
             android:textColor="#000"
             android:id="@+id/snippet"/>
-
     </LinearLayout>
 </LinearLayout>

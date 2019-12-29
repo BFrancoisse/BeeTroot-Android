@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -27,6 +28,8 @@ public class RecyclerViewProximityAdapter extends RecyclerView.Adapter<RecyclerV
     private static final String TAG = "RVProximityAdapter";
     private ArrayList<Farm> farms;
     private Context context;
+
+
 
     CircleImageView imageFarm;
     TextView nameFarm;
@@ -70,12 +73,20 @@ public class RecyclerViewProximityAdapter extends RecyclerView.Adapter<RecyclerV
         phoneFarm.setText(farms.get(position).getUser().getPhone());
         nameFarm.setText(farms.get(position).getName());
         km.setText(String.format( "%.1f",farms.get(position).getDistance()) + context.getString(R.string.km));
-        /*parentLayout.setOnClickListener(new View.OnClickListener() {
+
+        ImageView fav = (ImageView)holder.itemView.findViewById(R.id.fav);
+
+        fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,farms.get(position).getName(),Toast.LENGTH_SHORT).show();
+
+                //if(exist pas encore )
+                Toast.makeText(context, "Ajouté au favoris !", Toast.LENGTH_LONG).show();
+                //else
+                //Toast.makeText(context, "Retiré des favoris !", Toast.LENGTH_LONG).show();
+
             }
-        });*/
+        });
     }
 
     @Override

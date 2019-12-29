@@ -1,5 +1,7 @@
 package com.example.beetrootapp.ViewModel;
 
+import android.content.Context;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
@@ -10,14 +12,14 @@ public class UserVM extends androidx.lifecycle.ViewModel{
 
     private LiveData<User> userById;
 
-    public LiveData<User> getUserById() {
+    public LiveData<User> getUserById(Context context) {
         userById = new MutableLiveData<>();
-        userById = loadUserById();
+        userById = loadUserById(context);
         return userById;
     }
 
-   private LiveData<User> loadUserById(){
-       UserRepository userRepository = new UserRepository();
+   private LiveData<User> loadUserById(Context context){
+       UserRepository userRepository = new UserRepository(context);
        return userRepository.getUserById();
    }
 }

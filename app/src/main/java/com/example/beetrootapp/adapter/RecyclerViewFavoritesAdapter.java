@@ -8,11 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beetrootapp.R;
+import com.example.beetrootapp.model.Farm;
 import com.example.beetrootapp.model.Like;
 
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerViewFavoritesAdapter extends RecyclerView.Adapter<RecyclerViewFavoritesAdapter.ViewHolder> {
     private static final String TAG = "RVFavoritesAdapter";
-    private ArrayList<Like> likes;
+    private ArrayList<Farm> likes;
     private Context context;
 
     CircleImageView imageFarm;
@@ -30,7 +32,7 @@ public class RecyclerViewFavoritesAdapter extends RecyclerView.Adapter<RecyclerV
     ImageView fav;
     RelativeLayout parentLayout;
 
-    public RecyclerViewFavoritesAdapter(ArrayList<Like> likes, Context context) {
+    public RecyclerViewFavoritesAdapter(ArrayList<Farm> likes, Context context) {
         super();
         this.likes = likes;
         this.context = context;
@@ -51,14 +53,23 @@ public class RecyclerViewFavoritesAdapter extends RecyclerView.Adapter<RecyclerV
         nameFarm = (TextView)holder.itemView.findViewById(R.id.farm_name);
         phoneFarm = (TextView)holder.itemView.findViewById(R.id.farm_phone);
         fav = (ImageView)holder.itemView.findViewById(R.id.fav);
-        parentLayout = holder.itemView.findViewById(R.id.parent_layout_proximity);
+        parentLayout = holder.itemView.findViewById(R.id.parent_layout_favorites);
 
 //        Glide.with(context).asBitmap().load("https://resultadosdigitais.com.br/blog/files/2018/01/url-amigavel.jpg").into(holder.imageFarm);
 
-        phoneFarm.setText(likes.get(position).getUser().getPhone());
-        nameFarm.setText(likes.get(position).getFarm().getName());
+        /*phoneFarm.setText(likes.get(position).getUser().getPhone());
+        nameFarm.setText(likes.get(position).getFarm().getName());*/
 
-        //Onclick sur fav
+        phoneFarm.setText(likes.get(position).getUser().getPhone());
+        nameFarm.setText(likes.get(position).getName());
+
+        fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                likes.remove((likes.get(position)));
+                Toast.makeText(context, "Supprimé des Favoris!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override

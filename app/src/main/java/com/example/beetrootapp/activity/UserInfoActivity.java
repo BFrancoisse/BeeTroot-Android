@@ -55,14 +55,14 @@ public class UserInfoActivity extends AppCompatActivity {
 
     public void setTextViewValues(){
         userVM = ViewModelProviders.of(this).get(UserVM.class);
-        userVM.getUserById().observe(this, user -> {
+        userVM.getUserById(getApplicationContext()).observe(this, user -> {
             txtFirstname.setText(user.getFirstname());
             txtLastname.setText(user.getLastname());
             txtEmail.setText(user.getEmail());
             txtPhone.setText(user.getPhone());
             txtStreet.setText(user.getAddress().getStreet());
             txtNumberHouse.setText(user.getAddress().getNumber());
-            txtZipCode.setText("" + user.getAddress().getZipCode());
+            txtZipCode.setText(String.valueOf(user.getAddress().getZipCode()));
             txtLocality.setText(user.getAddress().getCity());
 
             uUser = user;
