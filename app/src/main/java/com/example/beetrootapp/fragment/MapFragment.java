@@ -65,7 +65,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     private EditText searchtext;
     private ImageView searchMagnify;
 
-    private ImageView mGPS;
+    //private ImageView mGPS;
 
     private FusedLocationProviderClient fusedLocationProviderClient;
 
@@ -78,7 +78,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         bindById(view);
         initSearchBar();
         initClickListenerSearchMagnify();
-        initClickListenerGPS();
+        //initClickListenerGPS();
         return view;
 
     }
@@ -86,7 +86,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
     public void bindById(View view){
         searchtext = (EditText)view.findViewById(R.id.input_search);
         searchMagnify = (ImageView)view.findViewById(R.id.ic_magnify);
-        mGPS = (ImageView)view.findViewById(R.id.ic_gps);
+        //mGPS = (ImageView)view.findViewById(R.id.ic_gps);
     }
 
 
@@ -142,14 +142,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
             }
         });
     }
-    public void initClickListenerGPS(){
+    /*public void initClickListenerGPS(){
         mGPS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getDeviceLocation();
             }
         });
-    }
+    }*/
     private void geoLocateFarm(){
         String searchString = searchtext.getText().toString();
 
