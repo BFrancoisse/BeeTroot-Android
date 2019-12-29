@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.activity.FarmActivity;
 import com.example.beetrootapp.model.Farm;
-import com.example.beetrootapp.model.Like;
 
 import java.util.ArrayList;
 
@@ -69,7 +68,7 @@ public class RecyclerViewFavoritesAdapter extends RecyclerView.Adapter<RecyclerV
             @Override
             public void onClick(View v) {
                 likes.remove((likes.get(position)));
-                Toast.makeText(context, "Supprimé des Favoris!", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, R.string.deleteFromFavoris, Toast.LENGTH_LONG).show();
             }
         });
 

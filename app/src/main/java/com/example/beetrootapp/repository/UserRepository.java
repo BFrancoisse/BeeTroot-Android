@@ -44,7 +44,7 @@ public class UserRepository extends InternetChecking{
 
                 @Override
                 public void onFailure(Call<User> call, Throwable t) {
-                    Log.i("User by Id", t.getMessage());
+                    Toast.makeText(context.getApplicationContext(), R.string.getUserByIdError, Toast.LENGTH_LONG).show();
                 }
             });
         }
@@ -64,12 +64,12 @@ public class UserRepository extends InternetChecking{
             call.enqueue(new Callback<User>() {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
-                    System.out.println("Ok update User");
+                    Toast.makeText(context.getApplicationContext(), R.string.updateUserOk, Toast.LENGTH_LONG).show();
                 }
 
                 @Override
                 public void onFailure(Call<User> call, Throwable t) {
-                    System.out.println("failure");
+                    Toast.makeText(context.getApplicationContext(), R.string.updateUserError, Toast.LENGTH_LONG).show();
                 }
             });
         }
@@ -87,12 +87,12 @@ public class UserRepository extends InternetChecking{
             call.enqueue(new Callback<User>() {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
-                    System.out.println("Ok new User");
+                    Toast.makeText(context.getApplicationContext(), R.string.newUserOk, Toast.LENGTH_LONG).show();
                 }
 
                 @Override
                 public void onFailure(Call<User> call, Throwable t) {
-                    System.out.println("failure");
+                    Toast.makeText(context.getApplicationContext(), R.string.newUserError, Toast.LENGTH_LONG).show();
                 }
             });
         }

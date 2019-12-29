@@ -1,7 +1,6 @@
 package com.example.beetrootapp.ViewModel;
 
 import android.content.Context;
-import android.net.ConnectivityManager;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

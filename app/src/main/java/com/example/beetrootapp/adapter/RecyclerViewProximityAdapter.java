@@ -13,16 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.bumptech.glide.Glide;
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.activity.FarmActivity;
 import com.example.beetrootapp.model.Farm;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -81,7 +77,7 @@ public class RecyclerViewProximityAdapter extends RecyclerView.Adapter<RecyclerV
             public void onClick(View v) {
 
                 //if(exist pas encore )
-                Toast.makeText(context, "Ajouté au favoris !", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, R.string.addToFavoris, Toast.LENGTH_LONG).show();
                 //else
                 //Toast.makeText(context, "Retiré des favoris !", Toast.LENGTH_LONG).show();
 

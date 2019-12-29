@@ -14,12 +14,12 @@ public class LikeVM {
 
     public LiveData<List<Like>> getLikesByUserId(Integer id) {
         likesByUserId = new MutableLiveData<>();
-        likesByUserId = loadLikesByUserId(id);
+        //likesByUserId = loadLikesByUserId(id);
         return likesByUserId;
     }
 
-    private LiveData<List<Like>> loadLikesByUserId(Integer id){
+    /*private LiveData<List<Like>> loadLikesByUserId(Integer id){
         LikeRepository likeRepository = new LikeRepository();
         return likeRepository.getAllLikeByIdUser(id);
-    }
+    }*/
 }

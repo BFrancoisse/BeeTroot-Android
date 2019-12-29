@@ -2,7 +2,6 @@ package com.example.beetrootapp.activity;
 
 
 import android.content.Intent;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
@@ -35,7 +33,6 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private AwesomeValidation awesomeValidation;
 
-    private UserVM userVM;
     private User currentUser;
     private UserRepository userRepository;
 
@@ -55,7 +52,7 @@ public class EditProfileActivity extends AppCompatActivity {
         setEditTextValues();
 
         setButtonSaveProfile();
-        setTitle("Editer mon profil");
+        setTitle(R.string.editMyprofile);
     }
 
     @Override

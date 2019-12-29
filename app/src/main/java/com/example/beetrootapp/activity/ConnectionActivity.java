@@ -7,7 +7,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
@@ -16,7 +15,6 @@ import com.example.beetrootapp.R;
 import com.example.beetrootapp.ViewModel.JwtVM;
 import com.example.beetrootapp.model.JwtToken;
 import com.example.beetrootapp.model.Login;
-import com.example.beetrootapp.repository.JwtRepository;
 
 public class ConnectionActivity extends AppCompatActivity {
     private EditText editTextEmail;

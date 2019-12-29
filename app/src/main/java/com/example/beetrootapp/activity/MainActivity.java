@@ -15,7 +15,6 @@ import com.example.beetrootapp.fragment.FavoritesFragment;
 import com.example.beetrootapp.fragment.MapFragment;
 import com.example.beetrootapp.fragment.ProximityFragment;
 import com.example.beetrootapp.R;
-import com.example.beetrootapp.model.Farm;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
