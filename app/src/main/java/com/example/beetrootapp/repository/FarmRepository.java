@@ -53,4 +53,26 @@ public class FarmRepository extends InternetChecking {
             return mutableLiveData;
 
     }
+
+    public LiveData<Farm> getFarmByUserId(int id) {
+        final MutableLiveData<Farm> mutableLiveData = new MutableLiveData<>();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(FarmService.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        FarmService farmService = retrofit.create(FarmService.class);
+        Call<Farm> call = farmService.getFarmByUserId(id);
+        call.enqueue(new Callback<Farm>() {
+            @Override
+            public void onResponse(Call<Farm> call, Response<Farm> response) {
+                mutableLiveData.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Farm> call, Throwable t) {
+                Log.e("Get farm by ID", t.getMessage());
+            }
+        });
+        return mutableLiveData;
+    }
 }

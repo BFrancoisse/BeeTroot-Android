@@ -7,7 +7,7 @@
     tools:context=".activity.UserInfoActivity">
 
     <ScrollView
-        android:id="@+id/scroller_user_info"
+        android:id="@+id/scroller_farm"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
@@ -48,7 +48,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/farmPictures"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="false"
@@ -60,7 +60,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="Benjamin Françoisse"
                             android:textAlignment="viewStart"
                             android:textColor="#000000"
                             android:textSize="16sp" />
@@ -70,7 +69,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="0470/58.92.04"
                             android:textColor="#000000"
                             android:textSize="16sp" />
 
@@ -79,7 +77,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="Rue du puits 33, 1341 Céroux-Mousty"
                             android:textColor="#000000"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -99,7 +96,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="95dp">
+                    android:layout_height="100dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -112,16 +109,28 @@
                             android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Description"
+                            android:text="@string/description"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/txtDescription"
-                            android:layout_width="match_parent"
-                            android:layout_height="63dp"
-                            android:text="Bienvenue dans ma magnifique ferme"
-                            android:textSize="16sp" />
+                        <ScrollView
+                            android:id="@+id/scroller_description"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:fillViewport="true"
+                            android:scrollbarStyle="insideInset"
+                            android:scrollbars="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/txtDescription"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="16sp" />
+                        </ScrollView>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -140,7 +149,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="10dp"
-                    android:text="Produits proposés"
+                    android:text="@string/products"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -184,7 +193,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
                     android:padding="8dp"
-                    android:text="Favoris"
+                    android:text="@string/favourite"
                     tools:layout_editor_absoluteX="307dp"
                     tools:layout_editor_absoluteY="16dp" />
 

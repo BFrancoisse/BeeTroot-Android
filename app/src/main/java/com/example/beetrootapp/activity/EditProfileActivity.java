@@ -49,12 +49,13 @@ public class EditProfileActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-         currentUser = (User) getIntent().getSerializableExtra("currentUser");
+        currentUser = (User) getIntent().getSerializableExtra("currentUser");
 
         bindEditTextId();
         setEditTextValues();
 
         setButtonSaveProfile();
+        setTitle("Editer mon profil");
     }
 
     @Override
@@ -89,7 +90,7 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (awesomeValidation.validate()) {
-                    Toast.makeText(getApplicationContext(), R.string.profileSave, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), R.string.profileSaved, Toast.LENGTH_LONG).show();
                     currentUser.setEmail(editEmail.getText().toString());
                     currentUser.setFirstname(editFirstname.getText().toString());
                     currentUser.setLastname(editLastname.getText().toString());

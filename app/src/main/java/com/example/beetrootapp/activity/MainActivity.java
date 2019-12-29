@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_cart);
         bottomNavigationView.setOnNavigationItemSelectedListener( navListener);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new MapFragment()).commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -98,12 +100,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                startActivity(openFarmActivity);
                break;
            case R.id.harvestProximity:
-               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                       new HarvestFragment()).commit();
+               Intent openHarvestActivity = new Intent(this, HarvestActivity.class);
+               startActivity(openHarvestActivity);
                break;
            case R.id.settings:
-               /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                       new SettingsFragment()).commit();*/
                Intent settings = new Intent(this, UserInfoActivity.class);
                startActivity(settings);
                break;

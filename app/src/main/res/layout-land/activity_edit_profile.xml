@@ -43,7 +43,7 @@ tools:context=".activity.EditProfileActivity">
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="15dp"
-                    android:text="@string/informations"
+                    android:text="@string/coordonnees"
                     android:textColor="#000000"
                     android:textSize="25sp"
                     android:gravity="center"
@@ -61,7 +61,7 @@ tools:context=".activity.EditProfileActivity">
                     android:layout_height="match_parent"
                     android:text="@string/firstname"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="13sp"
+                    android:textSize="16sp"
                     android:gravity="center"/>
 
                 <EditText
@@ -71,8 +71,8 @@ tools:context=".activity.EditProfileActivity">
                     android:fontFamily="sans-serif-light"
                     android:id="@+id/editFirstname"
                     android:textColor="#000000"
-                    android:textSize="18sp" />
-
+                    android:textSize="18sp"
+                    android:layout_marginEnd="15dp"/>
 
             </LinearLayout>
 
@@ -87,7 +87,7 @@ tools:context=".activity.EditProfileActivity">
                     android:gravity="center"
                     android:text="@string/lastname"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="13sp"
+                    android:textSize="16sp"
                     />
 
                 <EditText
@@ -97,9 +97,9 @@ tools:context=".activity.EditProfileActivity">
                     android:fontFamily="sans-serif-light"
                     android:id="@+id/editLastname"
                     android:textColor="#000000"
-                    android:textSize="18sp" />
-
-
+                    android:textSize="18sp"
+                    android:layout_marginEnd="15dp"
+                    />
 
             </LinearLayout>
 
@@ -114,7 +114,7 @@ tools:context=".activity.EditProfileActivity">
                     android:gravity="center"
                     android:text="@string/email"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="13sp" />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -123,8 +123,8 @@ tools:context=".activity.EditProfileActivity">
                     android:fontFamily="sans-serif-light"
                     android:id="@+id/editEmail"
                     android:textColor="#000000"
-                    android:textSize="18sp" />
-
+                    android:textSize="18sp"
+                    android:layout_marginEnd="15dp"/>
 
             </LinearLayout>
 
@@ -140,7 +140,7 @@ tools:context=".activity.EditProfileActivity">
                     android:gravity="center"
                     android:text="@string/phone"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="13sp" />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -149,140 +149,152 @@ tools:context=".activity.EditProfileActivity">
                     android:fontFamily="sans-serif-light"
                     android:id="@+id/editPhone"
                     android:textColor="#000000"
-                    android:textSize="18sp" />
-
-
+                    android:textSize="18sp"
+                    android:layout_marginEnd="15dp"/>
 
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:fontFamily="sans-serif-light"
-                    android:paddingBottom="1dp"
-                    android:text="@string/address"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="15dp">
 
-            </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:fontFamily="sans-serif-light"
+                                android:paddingBottom="1dp"
+                                android:text="@string/address"
+                                android:textColor="#000000"
+                                android:textSize="22sp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/street"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="13sp" />
+                        </LinearLayout>
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:fontFamily="sans-serif-light"
-                    android:id="@+id/editStreet"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="vertical">
 
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="@string/street"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp" />
 
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:fontFamily="sans-serif-light"
+                                android:id="@+id/editStreet"
+                                android:textColor="#000000"
+                                android:textSize="18sp"
+                                android:layout_marginEnd="15dp"/>
 
-            </LinearLayout>
+                        </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/numberHouse"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="13sp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="@string/numberHouse"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:fontFamily="sans-serif-light"
-                    android:id="@+id/editNumberHouse"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:fontFamily="sans-serif-light"
+                                android:id="@+id/editNumberHouse"
+                                android:textColor="#000000"
+                                android:textSize="18sp"
+                                android:layout_marginEnd="15dp"/>
 
+                        </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="vertical">
 
-            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="@string/zipCode"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:fontFamily="sans-serif-light"
+                                android:id="@+id/editZipCode"
+                                android:textColor="#000000"
+                                android:textSize="18sp"
+                                android:layout_marginEnd="15dp"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/zipCode"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="13sp" />
+                        </LinearLayout>
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:fontFamily="sans-serif-light"
-                    android:id="@+id/editZipCode"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="vertical">
 
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="@string/locality"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp" />
 
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:fontFamily="sans-serif-light"
+                                android:id="@+id/editLocality"
+                                android:textColor="#000000"
+                                android:textSize="18sp"
+                                android:layout_marginEnd="15dp"/>
 
-            </LinearLayout>
+                        </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/locality"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="13sp" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:fontFamily="sans-serif-light"
-                    android:id="@+id/editLocality"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
-
-
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <!-- Si l'utilisateur possède une ferme -->
                 <Button
-                style="@style/Widget.AppCompat.Button.Borderless"
+                style="@style/Widget.AppCompat.Button"
                 android:id="@+id/saveProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
