@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.beetrootapp.fragment.FavoritesFragment;
-import com.example.beetrootapp.fragment.HarvestFragment;
 import com.example.beetrootapp.fragment.MapFragment;
 import com.example.beetrootapp.fragment.ProximityFragment;
 import com.example.beetrootapp.R;
@@ -46,29 +45,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new MapFragment()).commit();
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                    Fragment selectedFragment = null;
+        new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                Fragment selectedFragment = null;
 
-                    switch(menuItem.getItemId()){
-                        case R.id.nav_cart:
-                            selectedFragment = new MapFragment();
+                switch(menuItem.getItemId()){
+                    case R.id.nav_cart:
+                        selectedFragment = new MapFragment();
 
-                            break;
-                        case R.id.nav_proximity:
-                            selectedFragment = new ProximityFragment();
-                            break;
-                        case R.id.nav_favorites:
-                            selectedFragment = new FavoritesFragment();
-                            break;
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
-                    return true;
+                        break;
+                    case R.id.nav_proximity:
+                        selectedFragment = new ProximityFragment();
+                        break;
+                    case R.id.nav_favorites:
+                        selectedFragment = new FavoritesFragment();
+                        break;
                 }
-
-            };
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        selectedFragment).commit();
+                return true;
+            }
+        };
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -94,17 +92,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                startActivity(openFarmActivity);
                break;
            case R.id.harvestProximity:
-               getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                       new HarvestFragment()).commit();
+               Intent openHarvestActivity = new Intent(this, HarvestActivity.class);
+               startActivity(openHarvestActivity);
                break;
            case R.id.settings:
-               /*getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                       new SettingsFragment()).commit();*/
-               Intent intent = new Intent(this, UserInfoActivity.class);
-               startActivity(intent);
-
+               Intent openUserActivity = new Intent(this, UserInfoActivity.class);
+               startActivity(openUserActivity);
                break;
-            //déconnection
+            // TODO : déconnection
 
        }
        drawerLayout.closeDrawer(GravityCompat.START);
