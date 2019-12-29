@@ -47,6 +47,8 @@
     <string name="zipCodeError">Entrez un code postal valide</string>
     <string name="localityError">Entrez une localité valide</string>
     <string name="streetError">Entrez une rue valide</string>
+    <string name="nameError">Entrez un nom valide</string>
+    <string name="descriptionError">Entrez une description valide</string>
     <string name="confirmPasswordError">Mot de passe différent</string>
     <string name="passwordError">Entrez un mot de passe valide (min 8)</string>
 

@@ -83,7 +83,7 @@ public class EditFarmActivity extends AppCompatActivity {
                     currentFarm.getAddress().setCity(editLocality.getText().toString());
 
                     farmRepository = new FarmRepository(getApplicationContext());
-                    //farmRepository.updateFarm(farm);
+                    farmRepository.updateFarm(currentFarm);
                     // TODO : ajouter l'update d'une ferme à l'API
 
                     Intent intent = new Intent(getBaseContext(), FarmActivity.class);
@@ -101,9 +101,11 @@ public class EditFarmActivity extends AppCompatActivity {
         editZipCode = (EditText) findViewById(R.id.editZipCode);
         editLocality = (EditText) findViewById(R.id.editLocality);
 
-        // TODO : Add validation
-
-
+        // TODO : accepter les accents, chiffres et virgules pour name et description
+        awesomeValidation.addValidation(this, R.id.editStreet, "(.*) (.*) (.*)", R.string.streetError);
+        awesomeValidation.addValidation(this, R.id.editNumberHouse, "^[a-zA-Z0-9_.-]*$", R.string.numberHouseError);
+        awesomeValidation.addValidation(this, R.id.editZipCode, "[0-9]{4}", R.string.zipCodeError);
+        awesomeValidation.addValidation(this, R.id.editLocality, "^^[a-zA-Z\\s]+$", R.string.localityError);
     }
 
     // TODO : possibilité de changer la localisation GPS

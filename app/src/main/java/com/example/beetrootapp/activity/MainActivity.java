@@ -15,6 +15,7 @@ import com.example.beetrootapp.fragment.FavoritesFragment;
 import com.example.beetrootapp.fragment.MapFragment;
 import com.example.beetrootapp.fragment.ProximityFragment;
 import com.example.beetrootapp.R;
+import com.example.beetrootapp.model.Farm;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                break;
            case R.id.myFarm:
                Intent openFarmActivity = new Intent(this, FarmActivity.class);
+               //openFarmActivity.putExtra("farmerId", .getUserId());
                startActivity(openFarmActivity);
                break;
            case R.id.harvestProximity:
@@ -109,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            case R.id.logout:
                Intent logout = new Intent(this, StartActivity.class);
                startActivity(logout);
-                finish();
+               finish();
                break;
 
        }

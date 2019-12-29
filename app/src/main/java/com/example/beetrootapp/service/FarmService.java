@@ -1,11 +1,14 @@
 package com.example.beetrootapp.service;
 
 import com.example.beetrootapp.model.Farm;
+import com.example.beetrootapp.model.User;
 
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface FarmService {
@@ -16,4 +19,7 @@ public interface FarmService {
 
     @GET("Farm/getByUserId")
     Call<Farm> getFarmByUserId(@Query("id")Integer id);
+
+    @PUT("user/updateFarm")
+    Call<Farm> updateFarm(@Body Farm farm);
 }

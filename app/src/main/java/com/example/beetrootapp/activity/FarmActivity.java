@@ -30,6 +30,8 @@ public class FarmActivity extends AppCompatActivity {
     private TextView txtAddress;
     private TextView txtDescription;
 
+    private Integer farmerId;
+
     private UserVM userVM;
     private User user;
     private FarmVM farmVM;
@@ -43,9 +45,10 @@ public class FarmActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        setButtonEdit();
+        farmerId = ((Integer) getIntent().getSerializableExtra("farmerId") != null) ? (Integer) getIntent().getSerializableExtra("farmerId") : 1;
         setButtonDirection();
         setButtonReview();
+        setButtonEdit();
         setButtonFavourite();
         setTextViewValues();
         bindViewId();
@@ -63,7 +66,7 @@ public class FarmActivity extends AppCompatActivity {
         userVM = ViewModelProviders.of(this).get(UserVM.class);
         userVM.getUserById(getApplicationContext()).observe(this, user -> this.user = user);
         farmVM = ViewModelProviders.of(this).get(FarmVM.class);
-        farmVM.getFarmByUserId(3,getApplicationContext()).observe(this, farm ->{
+        farmVM.getFarmByUserId(farmerId,getApplicationContext()).observe(this, farm ->{
             txtFarmerName.setText(this.user.getFirstname());
             txtAddress.setText(farm.getAddress().getNumber() + " " + farm.getAddress().getStreet() + ", " + farm.getAddress().getZipCode() + " " + farm.getAddress().getCity());
             txtDescription.setText(farm.getDescription());

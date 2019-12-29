@@ -1,11 +1,14 @@
 package com.example.beetrootapp.fragment;
 
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.ViewModel.FarmVM;
+import com.example.beetrootapp.activity.FarmActivity;
 import com.example.beetrootapp.adapter.RecyclerViewProximityAdapter;
 import com.example.beetrootapp.model.Farm;
 import com.example.beetrootapp.model.User;
@@ -50,7 +54,6 @@ public class ProximityFragment extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_proximity);
         getDeviceLocation();
 
-
         farmsProximity = new ArrayList<>();
 
         farmVM = ViewModelProviders.of(this).get(FarmVM.class);
@@ -58,7 +61,6 @@ public class ProximityFragment extends Fragment {
             farmsProximity = (ArrayList<Farm>) farms;
             getDistancesBetweenUserFarm();
             initRecyclerView();
-
         });
         return view;
     }
@@ -70,7 +72,6 @@ public class ProximityFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(recyclerViewProximityAdapter);
     }
-
     private void getDistancesBetweenUserFarm(){
         for(Farm farm : farmsProximity)
         {
@@ -90,9 +91,7 @@ public class ProximityFragment extends Fragment {
             }
         });
     }
-
     private void getDeviceLocation(){
-
         try {
             fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
             Task<Location> locationResult = fusedLocationProviderClient.getLastLocation();
@@ -107,14 +106,8 @@ public class ProximityFragment extends Fragment {
                     }
                 }
             });
-
         } catch (SecurityException e) {
             Log.e("Exception: %s", e.getMessage());
         }
-
-
     }
-
-
-
 }

@@ -1,6 +1,7 @@
 package com.example.beetrootapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.beetrootapp.R;
+import com.example.beetrootapp.activity.FarmActivity;
 import com.example.beetrootapp.model.Farm;
 
 import java.util.ArrayList;
@@ -29,14 +31,12 @@ public class RecyclerViewProximityAdapter extends RecyclerView.Adapter<RecyclerV
     private ArrayList<Farm> farms;
     private Context context;
 
-
-
     CircleImageView imageFarm;
     TextView nameFarm;
     TextView phoneFarm;
     TextView km;
     RatingBar ratingBar;
-    RelativeLayout parentLayout;
+    RelativeLayout farmItem;
 
     public RecyclerViewProximityAdapter(ArrayList<Farm> farms, Context context) {
         super();
@@ -60,9 +60,9 @@ public class RecyclerViewProximityAdapter extends RecyclerView.Adapter<RecyclerV
         phoneFarm = (TextView)holder.itemView.findViewById(R.id.farm_phone);
         km = (TextView)holder.itemView.findViewById(R.id.km_proximity);
         ratingBar = (RatingBar)holder.itemView.findViewById(R.id.rating_bar_farm);
-        parentLayout = holder.itemView.findViewById(R.id.parent_layout_proximity);
+        farmItem = holder.itemView.findViewById(R.id.farm_item);
 
-//        Glide.with(context).asBitmap().load("https://resultadosdigitais.com.br/blog/files/2018/01/url-amigavel.jpg").into(holder.imageFarm);
+//      Glide.with(context).asBitmap().load("https://resultadosdigitais.com.br/blog/files/2018/01/url-amigavel.jpg").into(holder.imageFarm);
 
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -87,6 +87,15 @@ public class RecyclerViewProximityAdapter extends RecyclerView.Adapter<RecyclerV
 
             }
         });
+
+        farmItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openFarmActivity = new Intent(v.getContext(), FarmActivity.class);
+                openFarmActivity.putExtra("farmerId", farms.get(position).getUserId());
+                v.getContext().startActivity(openFarmActivity);
+            }
+        });
     }
 
     @Override
@@ -100,7 +109,5 @@ public class RecyclerViewProximityAdapter extends RecyclerView.Adapter<RecyclerV
             super(proximityView);
             view = proximityView;
         }
-
-
     }
 }

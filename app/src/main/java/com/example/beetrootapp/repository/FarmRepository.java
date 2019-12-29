@@ -80,4 +80,28 @@ public class FarmRepository extends InternetChecking {
         }
         return mutableLiveData;
     }
+
+    public void updateFarm(Farm farm){
+        if(!super.isNetworkAvailable())
+            Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
+        else {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(FarmService.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            FarmService userService = retrofit.create(FarmService.class);
+            Call<Farm> call = userService.updateFarm(farm);
+            call.enqueue(new Callback<Farm>() {
+                @Override
+                public void onResponse(Call<Farm> call, Response<Farm> response) {
+                    System.out.println("Ok update farm");
+                }
+
+                @Override
+                public void onFailure(Call<Farm> call, Throwable t) {
+                    System.out.println("failure");
+                }
+            });
+        }
+    }
 }
