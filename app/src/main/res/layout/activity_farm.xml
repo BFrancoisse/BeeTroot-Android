@@ -60,7 +60,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="Benjamin Françoisse"
                             android:textAlignment="viewStart"
                             android:textColor="#000000"
                             android:textSize="16sp" />
@@ -70,7 +69,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="0470/58.92.04"
                             android:textColor="#000000"
                             android:textSize="16sp" />
 
@@ -79,7 +77,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="Rue du puits 33, 1341 Céroux-Mousty"
                             android:textColor="#000000"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -112,7 +109,7 @@
                             android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Description"
+                            android:text="@string/description"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -132,7 +129,6 @@
                                 android:id="@+id/txtDescription"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Bienvenue dans ma magnifique ferme"
                                 android:textSize="16sp" />
                         </ScrollView>
                     </LinearLayout>
@@ -153,7 +149,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:paddingBottom="10dp"
-                    android:text="Produits proposés"
+                    android:text="@string/products"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -197,7 +193,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
                     android:padding="8dp"
-                    android:text="Favoris"
+                    android:text="@string/favourite"
                     tools:layout_editor_absoluteX="307dp"
                     tools:layout_editor_absoluteY="16dp" />
 
