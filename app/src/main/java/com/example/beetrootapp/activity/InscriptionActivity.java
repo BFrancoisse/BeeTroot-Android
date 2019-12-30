@@ -81,6 +81,7 @@ public class InscriptionActivity extends AppCompatActivity {
                     User newUser = new User(0, editTextEmail.getText().toString(), editTextFirstname.getText().toString(), editTextLastname.getText().toString(), editTextPassword.getText().toString(), null, 0, null, null, null, 0);
 
                     userRepository = new UserRepository(getApplicationContext());
+                    //Problème au niveau de l'API donc impossible d écrire
                     userRepository.newUser(newUser);
                     Toast.makeText(getApplicationContext(), R.string.profileSave, Toast.LENGTH_LONG).show();
 
