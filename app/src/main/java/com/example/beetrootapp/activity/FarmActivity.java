@@ -98,8 +98,8 @@ public class FarmActivity extends AppCompatActivity {
             txtFarmerPhone.setText(user.getPhone());
         });
         farmVM = ViewModelProviders.of(this).get(FarmVM.class);
-        if(farmerId == 0) {
-            farmVM.getFarmByEmail(userEmail, getApplicationContext()).observe(this, farm -> {
+        if(userEmail == null) {
+            farmVM.getFarmByUserId(farmId, getApplicationContext()).observe(this, farm -> {
                 txtAddress.setText(farm.getAddress().getNumber() + " " + farm.getAddress().getStreet() + ", " + farm.getAddress().getZipCode() + " " + farm.getAddress().getCity());
                 txtDescription.setText(farm.getDescription());
                 setTitle(farm.getName());
@@ -108,7 +108,7 @@ public class FarmActivity extends AppCompatActivity {
             });
         }
         else {
-            farmVM.getFarmByUserId(farmId, getApplicationContext()).observe(this, farm -> {
+            farmVM.getFarmByEmail(userEmail, getApplicationContext()).observe(this, farm -> {
                 txtAddress.setText(farm.getAddress().getNumber() + " " + farm.getAddress().getStreet() + ", " + farm.getAddress().getZipCode() + " " + farm.getAddress().getCity());
                 txtDescription.setText(farm.getDescription());
                 setTitle(farm.getName());
