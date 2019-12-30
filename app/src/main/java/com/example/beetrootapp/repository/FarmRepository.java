@@ -25,7 +25,7 @@ public class FarmRepository extends InternetChecking {
         super(context);
     }
 
-    public LiveData<List<Farm>> getAllFarms(){
+    public MutableLiveData<List<Farm>> getAllFarms(){
         final MutableLiveData<List<Farm>> mutableLiveData = new MutableLiveData<>();
         if(!super.isNetworkAvailable())
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
@@ -74,6 +74,33 @@ public class FarmRepository extends InternetChecking {
                 @Override
                 public void onFailure(Call<Farm> call, Throwable t) {
                     Toast.makeText(context, R.string.farmByIdError, Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        return mutableLiveData;
+    }
+
+    public LiveData<Farm> getFarmByEmail(String email) {
+        final MutableLiveData<Farm> mutableLiveData = new MutableLiveData<>();
+        if(!super.isNetworkAvailable())
+            Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
+        else {
+
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(FarmService.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            FarmService farmService = retrofit.create(FarmService.class);
+            Call<Farm> call = farmService.getFarmByEmail(email);
+            call.enqueue(new Callback<Farm>() {
+                @Override
+                public void onResponse(Call<Farm> call, Response<Farm> response) {
+                    mutableLiveData.setValue(response.body());
+                }
+
+                @Override
+                public void onFailure(Call<Farm> call, Throwable t) {
+                    Toast.makeText(context, R.string.farmByEmailError, Toast.LENGTH_LONG).show();
                 }
             });
         }

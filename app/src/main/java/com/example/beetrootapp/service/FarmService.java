@@ -19,6 +19,9 @@ public interface FarmService {
     @GET("Farm/getByUserId")
     Call<Farm> getFarmByUserId(@Query("id")Integer id);
 
+    @GET("Farm/getFarmByEmail")
+    Call<Farm> getFarmByEmail(@Query("email")String email);
+
     @PUT("user/updateFarm")
     Call<Farm> updateFarm(@Body Farm farm);
 }

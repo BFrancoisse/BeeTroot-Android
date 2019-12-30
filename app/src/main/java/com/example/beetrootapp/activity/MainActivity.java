@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            case R.id.myFarm:
                String userEmail = getIntent().getStringExtra("userEmail");
                Intent openFarmActivity = new Intent(this, FarmActivity.class);
+               openFarmActivity.putExtra("userEmail", userEmail);
                /*userVM = ViewModelProviders.of(this).get(UserVM.class);
                userVM.getUserIdByEmail(getApplicationContext(),userEmail).observe(this, id ->{
 

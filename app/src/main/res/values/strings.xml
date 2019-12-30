@@ -81,9 +81,11 @@
 
     <string name="getAllFarmsError">Erreur de recupération des fermes</string>
     <string name="farmByIdError">Erreur de recupération de la ferme</string>
+    <string name="farmByEmailError">Erreur de recupération de la ferme</string>
     <string name="updateFarmError">Erreur lors de la modification</string>
     <string name="updateFarmOk">Mise à jour ferme effectué</string>
     <string name="getAllLikesError">Erreur de recupération des favoris</string>
+    <string name="getPicturesError">Erreur de recupération des images</string>
     <string name="newLikeOk">Ajouté aux favoris!</string>
     <string name="newLikeError">Erreur d ajout aux favoris</string>
     <string name="deleteLikeOk">Suppression du favoris validé</string>

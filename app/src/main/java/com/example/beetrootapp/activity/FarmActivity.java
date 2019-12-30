@@ -1,5 +1,6 @@
 package com.example.beetrootapp.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,13 +13,23 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.ViewModel.FarmVM;
+import com.example.beetrootapp.ViewModel.PictureVM;
 import com.example.beetrootapp.ViewModel.UserVM;
+import com.example.beetrootapp.adapter.RecyclerViewPicturesAdapter;
 import com.example.beetrootapp.model.Farm;
+import com.example.beetrootapp.model.Picture;
 import com.example.beetrootapp.model.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FarmActivity extends AppCompatActivity {
     private Button buttonEdit;
@@ -30,13 +41,21 @@ public class FarmActivity extends AppCompatActivity {
     private TextView txtFarmerPhone;
     private TextView txtAddress;
     private TextView txtDescription;
+    //private RecyclerView mRecyclerView;
+    //private RecyclerViewPicturesAdapter mAdapter;
 
+    private String userEmail;
     private Integer farmerId;
+    private int farmId;
 
     private UserVM userVM;
     private User user;
     private FarmVM farmVM;
-    private Farm farm;
+    private Farm currentFarm;
+    private PictureVM pictureVM;
+    private List<Picture>  picturesList;
+
+    private Context context = FarmActivity.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,17 +65,22 @@ public class FarmActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        farmerId = ((Integer) getIntent().getSerializableExtra("farmerId") != null) ? (Integer) getIntent().getSerializableExtra("farmerId") : 1;
+        farmerId = ((Integer) getIntent().getSerializableExtra("farmerId") != null) ? (Integer) getIntent().getSerializableExtra("farmerId") : 0;
+
+        bindViewId();
+        setViewValues();
         setButtonDirection();
         setButtonReview();
         setButtonEdit();
         setButtonFavourite();
-        setTextViewValues();
+        //initRecyclerView();
+
+        setViewValues();
         bindViewId();
 
-        Integer farmerId = getIntent().getIntExtra("farmerId",0);
-        Toast.makeText(getApplicationContext(), farmerId, Toast.LENGTH_LONG).show();
+
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem back) {
 
@@ -66,54 +90,74 @@ public class FarmActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(back);
     }
-    public void setTextViewValues() {
-        userVM = ViewModelProviders.of(this).get(UserVM.class);
-        userVM.getUserById(getApplicationContext()).observe(this, user -> this.user = user);
-        farmVM = ViewModelProviders.of(this).get(FarmVM.class);
-        farmVM.getFarmByUserId(farmerId,getApplicationContext()).observe(this, farm ->{
-            txtFarmerName.setText(this.user.getFirstname());
-            txtAddress.setText(farm.getAddress().getNumber() + " " + farm.getAddress().getStreet() + ", " + farm.getAddress().getZipCode() + " " + farm.getAddress().getCity());
-            txtDescription.setText(farm.getDescription());
-            txtFarmerPhone.setText(this.user.getPhone());
-            setTitle(farm.getName());
-
-            this.farm = farm;
+    private void setViewValues() {
+        userEmail = getIntent().getStringExtra("userEmail");
+        userVM.getUserByEmail(getApplicationContext(),userEmail).observe(this, user ->{
+            txtFarmerName.setText(user.getFirstname() + " " + user.getLastname());
+            txtFarmerPhone.setText(user.getPhone());
         });
+        farmVM = ViewModelProviders.of(this).get(FarmVM.class);
+        if(farmerId == 0) {
+            farmVM.getFarmByEmail(userEmail, getApplicationContext()).observe(this, farm -> {
+                txtAddress.setText(farm.getAddress().getNumber() + " " + farm.getAddress().getStreet() + ", " + farm.getAddress().getZipCode() + " " + farm.getAddress().getCity());
+                txtDescription.setText(farm.getDescription());
+                setTitle(farm.getName());
+                this.farmId = farm.getId();
+                this.currentFarm = farm;
+            });
+        }
+        else {
+            farmVM.getFarmByUserId(farmId, getApplicationContext()).observe(this, farm -> {
+                txtAddress.setText(farm.getAddress().getNumber() + " " + farm.getAddress().getStreet() + ", " + farm.getAddress().getZipCode() + " " + farm.getAddress().getCity());
+                txtDescription.setText(farm.getDescription());
+                setTitle(farm.getName());
+                this.farmId = farm.getId();
+                this.currentFarm = farm;
+            });
+        }
+        //loadImageByInternetUrl();
     }
-    public void bindViewId(){
+    private void bindViewId(){
         txtFarmerName = (TextView) findViewById(R.id.txtFarmerName);
         txtFarmerPhone = (TextView) findViewById(R.id.txtFarmerPhone);
         txtAddress = (TextView) findViewById(R.id.txtAddress);
         txtDescription = (TextView) findViewById(R.id.txtDescription);
         farmPictures = (ImageView) findViewById(R.id.farmPictures);
+        //mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_pictures)
         // TODO : afficher images et produits proposés
     }
-    public void setButtonEdit(){
+    /*private void initRecyclerView() {
+        mAdapter = new RecyclerViewPicturesAdapter(this, pictureVM.getPicturesByFarmId(this, currentFarm.getId()).getValue());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
+    }*/
+    private void setButtonEdit(){
         buttonEdit = (Button) findViewById(R.id.edit);
 
         buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), EditFarmActivity.class);
-                intent.putExtra("currentFarm", farm);
+                intent.putExtra("currentFarm", currentFarm);
                 startActivity(intent);
                 finish();
             }
         });
     }
-    public void setButtonDirection(){
+    private void setButtonDirection(){
         buttonDirection = (Button) findViewById(R.id.direction);
 
         buttonDirection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                        Uri.parse(R.string.uriGoogleMap + farm.getGeographicCoordinates()));
+                        Uri.parse(R.string.uriGoogleMap + currentFarm.getGeographicCoordinates()));
                 startActivity(intent);
             }
         });
     }
-    public void setButtonReview(){
+    private void setButtonReview(){
         buttonReview = (Button) findViewById(R.id.review);
 
         buttonReview.setOnClickListener(new View.OnClickListener() {
@@ -125,7 +169,7 @@ public class FarmActivity extends AppCompatActivity {
             }
         });
     }
-    public void setButtonFavourite(){
+    private void setButtonFavourite(){
         buttonFavourite = (Button) findViewById(R.id.favourite);
 
         buttonFavourite.setOnClickListener(new View.OnClickListener() {
@@ -134,5 +178,22 @@ public class FarmActivity extends AppCompatActivity {
                 // TODO : Ajouter dans la DB un catalogue de fermes préférées
             }
         });
+    }
+    private void loadImageByInternetUrl() {
+        picturesList = new ArrayList<>();
+        pictureVM = ViewModelProviders.of(this).get(PictureVM.class);
+        pictureVM
+                .getPicturesByFarmId(getApplicationContext(), farmId)
+                .observe(this, pictures -> {
+                    System.out.println("replop");
+                    for(Picture picture:pictures) {
+                        String internetUrl = picture.getPictureURL();
+                        System.out.println("rereplop");
+                        Glide
+                                .with(context)
+                                .load(internetUrl)
+                                .into(farmPictures);
+                    }
+                });
     }
 }

@@ -12,24 +12,26 @@ import java.util.List;
 
 public class FarmVM extends androidx.lifecycle.ViewModel{
 
-    private LiveData<List<Farm>> farms;
+    private MutableLiveData<List<Farm>> farms;
     private LiveData<Farm> farm;
+    private FarmRepository farmRepository;
 
-    public LiveData<List<Farm>> getFarms(Context context) {
-        farms = new MutableLiveData<>();
-        farms = loadFarms(context);
-        return farms;
-    }
-
-    public LiveData<Farm> getFarmByUserId(int id,Context context) {
-        FarmRepository farmRepository = new FarmRepository(context);
-        farm = new MutableLiveData<>();
+    public LiveData<Farm> getFarmByUserId(int id, Context context) {
+        farmRepository = new FarmRepository(context);
         farm = farmRepository.getFarmByUserId(id);
         return farm;
     }
 
-    private LiveData<List<Farm>> loadFarms(Context context){
+    public LiveData<Farm> getFarmByEmail(String email, Context context) {
+        farmRepository = new FarmRepository(context);
+        farm = farmRepository.getFarmByEmail(email);
+        return farm;
+    }
+
+    public MutableLiveData<List<Farm>> getFarms(Context context) {
         FarmRepository farmRepository = new FarmRepository(context);
-        return farmRepository.getAllFarms();
+        farms = new MutableLiveData<>();
+        farms = farmRepository.getAllFarms();
+        return farms;
     }
 }
