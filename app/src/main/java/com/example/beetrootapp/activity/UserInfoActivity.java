@@ -56,7 +56,8 @@ public class UserInfoActivity extends AppCompatActivity {
 
     public void setTextViewValues(){
         userVM = ViewModelProviders.of(this).get(UserVM.class);
-        userVM.getUserById(getApplicationContext()).observe(this, user -> {
+        String userEmail = getIntent().getStringExtra("userEmail");
+        userVM.getUserByEmail(getApplicationContext(),userEmail).observe(this, user -> {
             txtFirstname.setText(user.getFirstname());
             txtLastname.setText(user.getLastname());
             txtEmail.setText(user.getEmail());

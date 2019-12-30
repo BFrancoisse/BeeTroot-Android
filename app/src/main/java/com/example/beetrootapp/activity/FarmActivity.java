@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,6 +53,9 @@ public class FarmActivity extends AppCompatActivity {
         setButtonFavourite();
         setTextViewValues();
         bindViewId();
+
+        Integer farmerId = getIntent().getIntExtra("farmerId",0);
+        Toast.makeText(getApplicationContext(), farmerId, Toast.LENGTH_LONG).show();
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem back) {

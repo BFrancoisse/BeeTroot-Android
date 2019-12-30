@@ -60,6 +60,7 @@ public class ConnectionActivity extends AppCompatActivity {
             if(jwtT!= null)
             {
                 Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                intent.putExtra("userEmail",currentLogin.getEmail());
                 startActivity(intent);
                 finish();
             }

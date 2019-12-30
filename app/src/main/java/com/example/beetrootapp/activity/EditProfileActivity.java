@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.example.beetrootapp.R;
-import com.example.beetrootapp.ViewModel.UserVM;
 import com.example.beetrootapp.model.User;
 import com.example.beetrootapp.repository.UserRepository;
 
@@ -100,8 +99,9 @@ public class EditProfileActivity extends AppCompatActivity {
                     userRepository = new UserRepository(getApplicationContext());
                     userRepository.updateUser(currentUser);
 
-                    Intent intent = new Intent(getBaseContext(), UserInfoActivity.class);
-                    startActivity(intent);
+                    Intent settings = new Intent(getBaseContext(), UserInfoActivity.class);
+                    settings.putExtra("userEmail",currentUser.getEmail());
+                    startActivity(settings);
                     finish();
                 }
             }

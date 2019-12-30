@@ -100,8 +100,33 @@ public class UserRepository extends InternetChecking{
             });
         }
     }
+    public LiveData<User> getUserByEmail(String email) {
+        final MutableLiveData<User> mutableLiveData = new MutableLiveData<>();
+        if (!super.isNetworkAvailable())
+            Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
+        else {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(UserService.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            UserService userService = retrofit.create(UserService.class);
+            Call<User> call = userService.getUserByEmail(email);
+            call.enqueue(new Callback<User>() {
+                @Override
+                public void onResponse(Call<User> call, Response<User> response) {
+                    mutableLiveData.setValue(response.body());
+                }
 
-    public LiveData<Integer> getUserIdByEmail(String email){
+                @Override
+                public void onFailure(Call<User> call, Throwable t) {
+                    Toast.makeText(context.getApplicationContext(), R.string.getUserIdByEmailError, Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        return mutableLiveData;
+    }
+
+    /*public LiveData<Integer> getUserIdByEmail(String email){
         final MutableLiveData<Integer> mutableLiveData = new MutableLiveData<>();
         if(!super.isNetworkAvailable())
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
@@ -126,7 +151,7 @@ public class UserRepository extends InternetChecking{
         }
         return mutableLiveData;
 
-    }
+    }*/
 
 
 

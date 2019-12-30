@@ -27,7 +27,7 @@
         <activity android:name=".activity.FarmActivity" />
         <activity android:name=".activity.EditFarmActivity" />
 
-        <activity android:name=".activity.StartActivity" />
+        <activity android:name=".activity.MainActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -41,7 +41,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.StartActivity"
             android:label="@string/title_activity_maps">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
