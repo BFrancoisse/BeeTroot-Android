@@ -58,8 +58,9 @@ public class EditProfileActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if(item.getItemId() == 16908332) {
-            Intent intent = new Intent(this, UserInfoActivity.class);
-            startActivity(intent);
+            Intent settings = new Intent(this, UserInfoActivity.class);
+            settings.putExtra("userEmail", currentUser.getEmail());
+            startActivity(settings);
             this.finish();
         }
         return super.onOptionsItemSelected(item);

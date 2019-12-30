@@ -1,11 +1,13 @@
 package com.example.beetrootapp.activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -30,8 +32,22 @@ public class ConnectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connection);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         bindById();
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId() == 16908332) {
+            Intent start = new Intent(this, StartActivity.class);
+            startActivity(start);
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void bindById(){
