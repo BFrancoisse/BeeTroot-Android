@@ -47,6 +47,13 @@
                         android:layout_marginLeft="10dp"
                         android:orientation="vertical">
 
+                        <!-- <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/recycler_view_pictures" >
+
+                        </androidx.recyclerview.widget.RecyclerView> -->
+                        
                         <ImageView
                             android:id="@+id/farmPictures"
                             android:layout_width="match_parent"

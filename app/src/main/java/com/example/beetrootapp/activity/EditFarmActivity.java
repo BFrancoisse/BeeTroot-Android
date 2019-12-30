@@ -102,7 +102,7 @@ public class EditFarmActivity extends AppCompatActivity {
         editLocality = (EditText) findViewById(R.id.editLocality);
 
         // TODO : accepter les accents, chiffres et virgules pour name et description
-        awesomeValidation.addValidation(this, R.id.editStreet, "(.*) (.*) (.*)", R.string.streetError);
+        awesomeValidation.addValidation(this, R.id.editStreet, "(.*) (.*)", R.string.streetError);
         awesomeValidation.addValidation(this, R.id.editNumberHouse, "^[a-zA-Z0-9_.-]*$", R.string.numberHouseError);
         awesomeValidation.addValidation(this, R.id.editZipCode, "[0-9]{4}", R.string.zipCodeError);
         awesomeValidation.addValidation(this, R.id.editLocality, "^^[a-zA-Z\\s]+$", R.string.localityError);
