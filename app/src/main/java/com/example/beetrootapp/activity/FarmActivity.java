@@ -91,8 +91,9 @@ public class FarmActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(back);
     }
     private void setViewValues() {
-        userEmail = getIntent().getStringExtra("userEmail");
-        userVM.getUserByEmail(getApplicationContext(),userEmail).observe(this, user ->{
+        this.userEmail = getIntent().getStringExtra("userEmail");
+        userVM = ViewModelProviders.of(this).get(UserVM.class);
+        userVM.getUserByEmail(getApplicationContext(),this.userEmail).observe(this, user ->{
             txtFarmerName.setText(user.getFirstname() + " " + user.getLastname());
             txtFarmerPhone.setText(user.getPhone());
         });
