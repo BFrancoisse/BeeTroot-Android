@@ -93,13 +93,15 @@ public class FarmActivity extends AppCompatActivity {
     }
     private void setViewValues() {
         this.userEmail = getIntent().getStringExtra("userEmail");
-        userVM = ViewModelProviders.of(this).get(UserVM.class);
-        userVM.getUserByEmail(getApplicationContext(),this.userEmail).observe(this, user ->{
-            txtFarmerName.setText(user.getFirstname() + " " + user.getLastname());
-            txtFarmerPhone.setText(user.getPhone());
-        });
+
+
         farmVM = ViewModelProviders.of(this).get(FarmVM.class);
         if(farmerId != 0) {
+            userVM = ViewModelProviders.of(this).get(UserVM.class);
+            userVM.getUserById(getApplicationContext(),farmerId).observe(this, user ->{
+                txtFarmerName.setText(user.getFirstname() + " " + user.getLastname());
+                txtFarmerPhone.setText(user.getPhone());
+            });
             farmVM.getFarmByUserId(farmerId, getApplicationContext()).observe(this, farm -> {
                 txtAddress.setText(farm.getAddress().getNumber() + " " + farm.getAddress().getStreet() + ", " + farm.getAddress().getZipCode() + " " + farm.getAddress().getCity());
                 txtDescription.setText(farm.getDescription());
@@ -109,6 +111,11 @@ public class FarmActivity extends AppCompatActivity {
             });
         }
         else {
+            userVM = ViewModelProviders.of(this).get(UserVM.class);
+            userVM.getUserByEmail(getApplicationContext(),this.userEmail).observe(this, user ->{
+                txtFarmerName.setText(user.getFirstname() + " " + user.getLastname());
+                txtFarmerPhone.setText(user.getPhone());
+            });
             farmVM.getFarmByEmail(userEmail, getApplicationContext()).observe(this, farm -> {
                 txtAddress.setText(farm.getAddress().getNumber() + " " + farm.getAddress().getStreet() + ", " + farm.getAddress().getZipCode() + " " + farm.getAddress().getCity());
                 txtDescription.setText(farm.getDescription());

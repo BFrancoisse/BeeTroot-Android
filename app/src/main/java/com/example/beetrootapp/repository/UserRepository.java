@@ -28,7 +28,7 @@ public class UserRepository extends InternetChecking{
         super(context);
     }
 
-    public LiveData<User> getUserById(/*int id*/){
+    public LiveData<User> getUserById(int id){
         final MutableLiveData<User> mutableLiveData = new MutableLiveData<>();
         if(!super.isNetworkAvailable())
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
@@ -38,7 +38,7 @@ public class UserRepository extends InternetChecking{
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             UserService userService = retrofit.create(UserService.class);
-            Call<User> call = userService.getUserById(4);
+            Call<User> call = userService.getUserById(id);
             call.enqueue(new Callback<User>() {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
