@@ -99,8 +99,8 @@ public class FarmActivity extends AppCompatActivity {
             txtFarmerPhone.setText(user.getPhone());
         });
         farmVM = ViewModelProviders.of(this).get(FarmVM.class);
-        if(userEmail == null) {
-            farmVM.getFarmByUserId(farmId, getApplicationContext()).observe(this, farm -> {
+        if(farmerId != 0) {
+            farmVM.getFarmByUserId(farmerId, getApplicationContext()).observe(this, farm -> {
                 txtAddress.setText(farm.getAddress().getNumber() + " " + farm.getAddress().getStreet() + ", " + farm.getAddress().getZipCode() + " " + farm.getAddress().getCity());
                 txtDescription.setText(farm.getDescription());
                 setTitle(farm.getName());
