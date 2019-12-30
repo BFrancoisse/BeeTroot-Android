@@ -113,10 +113,26 @@ public class FarmActivity extends AppCompatActivity {
         else {
             userVM = ViewModelProviders.of(this).get(UserVM.class);
             userVM.getUserByEmail(getApplicationContext(),this.userEmail).observe(this, user ->{
+                /*if(user == null){
+                    Toast.makeText(getApplicationContext(), R.string.noData, Toast.LENGTH_LONG).show();
+                    /*Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                    intent.putExtra("userEmail", userEmail);
+                    startActivity(intent);*//*
+                    finish();
+                    return;
+                }*/
                 txtFarmerName.setText(user.getFirstname() + " " + user.getLastname());
                 txtFarmerPhone.setText(user.getPhone());
             });
             farmVM.getFarmByEmail(userEmail, getApplicationContext()).observe(this, farm -> {
+                if(farm == null){
+                    Toast.makeText(getApplicationContext(), R.string.noFarm, Toast.LENGTH_LONG).show();
+                    /*Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                    intent.putExtra("userEmail", userEmail);
+                    startActivity(intent);*/
+                    finish();
+                    return;
+                }
                 txtAddress.setText(farm.getAddress().getNumber() + " " + farm.getAddress().getStreet() + ", " + farm.getAddress().getZipCode() + " " + farm.getAddress().getCity());
                 txtDescription.setText(farm.getDescription());
                 setTitle(farm.getName());
