@@ -38,13 +38,11 @@ public class FarmActivity extends AppCompatActivity {
     private Button buttonDirection;
     private Button buttonReview;
     private Button buttonFavourite;
-    private ImageView farmPictures;
     private TextView txtFarmerName;
     private TextView txtFarmerPhone;
     private TextView txtAddress;
     private TextView txtDescription;
     private RecyclerView recyclerView;
-    //private RecyclerViewPicturesAdapter mAdapter;
 
     private String userEmail;
     private Integer farmerId;
@@ -146,17 +144,9 @@ public class FarmActivity extends AppCompatActivity {
         txtFarmerPhone = (TextView) findViewById(R.id.txtFarmerPhone);
         txtAddress = (TextView) findViewById(R.id.txtAddress);
         txtDescription = (TextView) findViewById(R.id.txtDescription);
-        farmPictures = (ImageView) findViewById(R.id.farmPictures);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_pictures);
         // TODO : afficher images et produits proposés
     }
-    /*private void initRecyclerView() {
-        mAdapter = new RecyclerViewPicturesAdapter(this, pictureVM.getPicturesByFarmId(this, currentFarm.getId()).getValue());
-        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(linearLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
-    }*/
-
     private void setButtonEdit(){
         buttonEdit = (Button) findViewById(R.id.edit);
 
@@ -210,7 +200,7 @@ public class FarmActivity extends AppCompatActivity {
         pictureVM
                 .getPicturesByFarmId(this, farmId)
                 .observe(this, pictures -> {
-                    if(pictures.isEmpty()){
+                    if(pictures == null){
                         Toast.makeText(getApplicationContext(), R.string.errorLoadingPictures, Toast.LENGTH_LONG).show();
                         return;
                     }
