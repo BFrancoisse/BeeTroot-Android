@@ -137,7 +137,7 @@ public class FarmActivity extends AppCompatActivity {
                 setTitle(farm.getName());
                 this.farmId = farm.getId();
                 this.currentFarm = farm;
-                loadImageByInternetUrl();
+                loadImageByInternetUrl();//Mtest
             });
         }
         loadImageByInternetUrl();
