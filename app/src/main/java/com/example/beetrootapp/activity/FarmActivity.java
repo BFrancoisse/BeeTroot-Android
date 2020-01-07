@@ -119,8 +119,9 @@ public class FarmActivity extends AppCompatActivity {
                     finish();
                     return;
                 }*/
-                txtFarmerName.setText(user.getFirstname() + " " + user.getLastname());
+
                 txtFarmerPhone.setText(user.getPhone());
+                txtFarmerName.setText(user.getFirstname() + " " + user.getLastname());
             });
             farmVM.getFarmByEmail(userEmail, getApplicationContext()).observe(this, farm -> {
                 if(farm == null){

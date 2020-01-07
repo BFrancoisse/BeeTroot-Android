@@ -10,6 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.model.Farm;
 import com.example.beetrootapp.model.User;
+import com.example.beetrootapp.other.Constant;
 import com.example.beetrootapp.other.InternetChecking;
 import com.example.beetrootapp.service.UserService;
 
@@ -34,7 +35,7 @@ public class UserRepository extends InternetChecking{
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
         else {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(UserService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             UserService userService = retrofit.create(UserService.class);
@@ -59,7 +60,7 @@ public class UserRepository extends InternetChecking{
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
         else {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(UserService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             UserService userService = retrofit.create(UserService.class);
@@ -82,7 +83,7 @@ public class UserRepository extends InternetChecking{
         Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
         else{
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(UserService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             UserService userService = retrofit.create(UserService.class);
@@ -106,7 +107,7 @@ public class UserRepository extends InternetChecking{
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
         else {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(UserService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             UserService userService = retrofit.create(UserService.class);

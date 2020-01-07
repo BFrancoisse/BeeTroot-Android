@@ -55,6 +55,7 @@ public class EditFarmActivity extends AppCompatActivity {
         int id = back.getItemId();
         if(id == 16908332) {
             Intent intent = new Intent(this, FarmActivity.class);
+            intent.putExtra("userEmail", currentFarm.getUser().getEmail());
             startActivity(intent);
             this.finish();
         }
@@ -87,6 +88,7 @@ public class EditFarmActivity extends AppCompatActivity {
                     // TODO : ajouter l'update d'une ferme à l'API
 
                     Intent intent = new Intent(getBaseContext(), FarmActivity.class);
+                    intent.putExtra("userEmail", currentFarm.getUser().getEmail());
                     startActivity(intent);
                     finish();
                 }

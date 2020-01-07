@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface LikeService {
-    String BASE_URL = "https://beetrootapi.azurewebsites.net/api/";
+
 
     @GET("like/getAllLikeByIdUser")
     Call<List<Like>> getAllLikeByIdUser(@Query("id")Integer id);

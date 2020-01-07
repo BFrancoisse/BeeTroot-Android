@@ -97,13 +97,14 @@
     <string name="newUserError">Erreur lors de l inscription</string>
     <string name="getUserIdByEmailError">Erreur de réception de données</string>
     <string name="noFarm">Vous n avez pas de ferme !</string>
-
+    <string name="connectionValidate">Vous êtes connecté!</string>
     <string name="editMyFarm">Editer ma ferme</string>
     <string name="editMyprofile">Editer mon profil</string>
     <string name="myProfile">Mon profil</string>
 
     <string name="uriGoogleMap">http://maps.google.com/maps?daddr=</string>
     <string name="harvest">Récolte</string>
+    <string name="baseUrlAPI">https://beetrootapi.azurewebsites.net/api/</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.model.Product;
+import com.example.beetrootapp.other.Constant;
 import com.example.beetrootapp.other.InternetChecking;
 import com.example.beetrootapp.service.ProductService;
 
@@ -29,7 +30,7 @@ public class ProductRepository extends InternetChecking {
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
         else {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(ProductService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             ProductService productService = retrofit.create(ProductService.class);
