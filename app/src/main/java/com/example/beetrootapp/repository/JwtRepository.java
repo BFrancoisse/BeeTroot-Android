@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.model.JwtToken;
 import com.example.beetrootapp.model.Login;
+import com.example.beetrootapp.other.Constant;
 import com.example.beetrootapp.other.InternetChecking;
 import com.example.beetrootapp.service.JwtService;
 
@@ -30,7 +31,7 @@ public class JwtRepository extends InternetChecking {
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
         else {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(JwtService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             JwtService jwtService = retrofit.create(JwtService.class);

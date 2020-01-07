@@ -9,7 +9,7 @@ import retrofit2.http.POST;
 
 public interface JwtService {
 
-    String BASE_URL = "https://beetrootapi.azurewebsites.net/api/";
+
 
     @POST("Jwt")
     Call<JwtToken> getToken(@Body Login login);

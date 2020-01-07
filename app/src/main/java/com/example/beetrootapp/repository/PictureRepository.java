@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.model.Picture;
+import com.example.beetrootapp.other.Constant;
 import com.example.beetrootapp.other.InternetChecking;
 import com.example.beetrootapp.service.PictureService;
 
@@ -30,7 +31,7 @@ public class PictureRepository extends InternetChecking {
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
         else {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(PictureService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             PictureService pictureService = retrofit.create(PictureService.class);

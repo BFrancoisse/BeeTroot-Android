@@ -14,8 +14,9 @@ public class User implements Serializable {
     private Review[] reviews;
     private Farm[] farm;
     private int userId;
+    private Like[]likes;
 
-    public User(int id, String email, String firstname, String lastname, String password, String phone, int addressId, Address address, Review[] reviews, Farm[] farm, int userId) {
+    public User(int id, String email, String firstname, String lastname, String password, String phone, int addressId, Address address, Review[] reviews, Farm[] farm,Like[]likes/*,int userId*/) {
         this.id = id;
         this.email = email;
         this.firstname = firstname;
@@ -26,7 +27,8 @@ public class User implements Serializable {
         this.address = address;
         this.reviews = reviews;
         this.farm = farm;
-        this.userId = userId;
+        this.likes = likes;
+        //this.userId = userId;
     }
 
     public int getId() {

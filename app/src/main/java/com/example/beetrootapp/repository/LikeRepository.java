@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.model.Like;
+import com.example.beetrootapp.other.Constant;
 import com.example.beetrootapp.other.InternetChecking;
 import com.example.beetrootapp.service.LikeService;
 
@@ -30,7 +31,7 @@ public class LikeRepository extends InternetChecking {
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
         else {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(LikeService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             LikeService farmService = retrofit.create(LikeService.class);
@@ -58,7 +59,7 @@ public class LikeRepository extends InternetChecking {
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
         else {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(LikeService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             LikeService likeService = retrofit.create(LikeService.class);
@@ -82,7 +83,7 @@ public class LikeRepository extends InternetChecking {
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
         else {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(LikeService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             LikeService likeService = retrofit.create(LikeService.class);

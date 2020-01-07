@@ -10,7 +10,7 @@ import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface UserService {
-    String BASE_URL = "https://beetrootapi.azurewebsites.net/api/";
+
 
     @GET("user/getUserById")
     Call<User> getUserById(@Query("id")Integer id);

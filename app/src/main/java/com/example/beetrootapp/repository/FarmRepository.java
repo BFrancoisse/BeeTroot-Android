@@ -11,6 +11,8 @@ import com.example.beetrootapp.model.Farm;
 import com.example.beetrootapp.other.InternetChecking;
 import com.example.beetrootapp.service.FarmService;
 
+import com.example.beetrootapp.other.Constant;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -32,7 +34,7 @@ public class FarmRepository extends InternetChecking {
         else {
 
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(FarmService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             FarmService farmService = retrofit.create(FarmService.class);
@@ -60,7 +62,7 @@ public class FarmRepository extends InternetChecking {
         else {
 
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(FarmService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             FarmService farmService = retrofit.create(FarmService.class);
@@ -87,7 +89,7 @@ public class FarmRepository extends InternetChecking {
         else {
 
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(FarmService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             FarmService farmService = retrofit.create(FarmService.class);
@@ -112,7 +114,7 @@ public class FarmRepository extends InternetChecking {
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
         else {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(FarmService.BASE_URL)
+                    .baseUrl(Constant.BASE_URL_API)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             FarmService userService = retrofit.create(FarmService.class);
