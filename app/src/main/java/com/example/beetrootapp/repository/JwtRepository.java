@@ -40,7 +40,10 @@ public class JwtRepository extends InternetChecking {
                 @Override
                 public void onResponse(Call<JwtToken> call, Response<JwtToken> response) {
                     mutableLiveData.setValue(response.body());
-                    Toast.makeText(context, R.string.connectionValidate, Toast.LENGTH_LONG).show();
+                    if(response.body() == null)
+                        Toast.makeText(context, R.string.connectionFailded, Toast.LENGTH_LONG).show();
+                    else
+                        Toast.makeText(context, R.string.connectionValidate, Toast.LENGTH_LONG).show();
                 }
 
                 @Override

@@ -20,11 +20,12 @@ import java.util.List;
 
 public class RecyclerViewPicturesAdapter extends RecyclerView.Adapter<RecyclerViewPicturesAdapter.ViewHolder>{
 
-    private List<Picture> mPictures = new ArrayList<>();
+    private ArrayList<Picture> mPictures;
     private Context mContext;
     private ImageView mImage;
 
-    public RecyclerViewPicturesAdapter(Context context, List<Picture> pictures) {
+    public RecyclerViewPicturesAdapter(Context context, ArrayList<Picture> pictures) {
+
         mPictures = pictures;
         mContext = context;
         System.out.println("plooop");

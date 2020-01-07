@@ -55,7 +55,7 @@ public class FarmActivity extends AppCompatActivity {
     private FarmVM farmVM;
     private Farm currentFarm;
     private PictureVM pictureVM;
-    private List<Picture> picturesList;
+    private ArrayList<Picture> picturesList;
 
     private Context context = FarmActivity.this;
 
@@ -68,7 +68,7 @@ public class FarmActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         farmerId = ((Integer) getIntent().getSerializableExtra("farmerId") != null) ? (Integer) getIntent().getSerializableExtra("farmerId") : 0;
-
+        picturesList = new ArrayList();
         bindViewId();
         setViewValues();
         setButtonDirection();
@@ -137,6 +137,7 @@ public class FarmActivity extends AppCompatActivity {
                 setTitle(farm.getName());
                 this.farmId = farm.getId();
                 this.currentFarm = farm;
+                loadImageByInternetUrl();
             });
         }
         loadImageByInternetUrl();
@@ -205,16 +206,14 @@ public class FarmActivity extends AppCompatActivity {
         });
     }
     private void loadImageByInternetUrl() {
-        picturesList = new ArrayList();
+
         pictureVM = ViewModelProviders.of(this).get(PictureVM.class);
-        pictureVM
-                .getPicturesByFarmId(this, farmId)
-                .observe(this, pictures -> {
-                    if(pictures.isEmpty()){
+        pictureVM.getPicturesByFarmId(this, farmId).observe(this, pictures -> {
+                   /*if(pictures.isEmpty()){
                         Toast.makeText(getApplicationContext(), R.string.errorLoadingPictures, Toast.LENGTH_LONG).show();
                         return;
-                    }
-                    picturesList = (ArrayList<Picture>) pictures;
+                    }*/
+                picturesList = (ArrayList<Picture>) pictures;
                 initRecyclerView();
         });
     }
@@ -225,6 +224,7 @@ public class FarmActivity extends AppCompatActivity {
         RecyclerViewPicturesAdapter recyclerViewPicturesAdapter = new RecyclerViewPicturesAdapter(this, picturesList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(recyclerViewPicturesAdapter);
+
     }
 }
 

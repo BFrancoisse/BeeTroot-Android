@@ -9,8 +9,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface PictureService {
-
-
-    @GET("getPicturesByFarmId")
+    @GET("Picture/getPicturesByFarmId")
     Call<List<Picture>> getPicturesByFarmId(@Query("id")Integer id);
 }

@@ -13,10 +13,10 @@ import java.util.List;
 
 public class PictureVM  extends ViewModel {
 
-    private MutableLiveData<List<Picture>> picturesByFarmId;
+    private LiveData<List<Picture>> picturesByFarmId;
     private PictureRepository pictureRepository;
 
-    public MutableLiveData<List<Picture>> getPicturesByFarmId(Context context, Integer id) {
+    public LiveData<List<Picture>> getPicturesByFarmId(Context context, Integer id) {
         pictureRepository = new PictureRepository(context);
         picturesByFarmId = new MutableLiveData<>();
         picturesByFarmId = pictureRepository.getPicturesByFarmId(id);
