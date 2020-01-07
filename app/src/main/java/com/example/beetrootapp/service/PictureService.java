@@ -12,5 +12,5 @@ public interface PictureService {
     String BASE_URL = "https://beetrootapi.azurewebsites.net/api/Picture/";
 
     @GET("getPicturesByFarmId")
-    Call<List<Picture>> getPicturesByFarmId(@Query("id") Integer id);
+    Call<List<Picture>> getPicturesByFarmId(@Query("id")Integer id);
 }

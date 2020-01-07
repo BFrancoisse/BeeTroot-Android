@@ -25,6 +25,7 @@ import com.example.beetrootapp.ViewModel.FarmVM;
 import com.example.beetrootapp.ViewModel.PictureVM;
 import com.example.beetrootapp.ViewModel.UserVM;
 //import com.example.beetrootapp.adapter.RecyclerViewPicturesAdapter;
+import com.example.beetrootapp.adapter.RecyclerViewPicturesAdapter;
 import com.example.beetrootapp.model.Farm;
 import com.example.beetrootapp.model.Picture;
 import com.example.beetrootapp.model.User;
@@ -42,7 +43,7 @@ public class FarmActivity extends AppCompatActivity {
     private TextView txtFarmerPhone;
     private TextView txtAddress;
     private TextView txtDescription;
-    //private RecyclerView mRecyclerView;
+    private RecyclerView recyclerView;
     //private RecyclerViewPicturesAdapter mAdapter;
 
     private String userEmail;
@@ -54,7 +55,7 @@ public class FarmActivity extends AppCompatActivity {
     private FarmVM farmVM;
     private Farm currentFarm;
     private PictureVM pictureVM;
-    private List<Picture>  picturesList;
+    private List<Picture> picturesList;
 
     private Context context = FarmActivity.this;
 
@@ -76,10 +77,7 @@ public class FarmActivity extends AppCompatActivity {
         setButtonFavourite();
         //initRecyclerView();
 
-        setViewValues();
         bindViewId();
-
-
     }
 
     @Override
@@ -140,7 +138,7 @@ public class FarmActivity extends AppCompatActivity {
                 this.currentFarm = farm;
             });
         }
-        //loadImageByInternetUrl();
+        loadImageByInternetUrl();
     }
     private void bindViewId(){
         txtFarmerName = (TextView) findViewById(R.id.txtFarmerName);
@@ -148,7 +146,7 @@ public class FarmActivity extends AppCompatActivity {
         txtAddress = (TextView) findViewById(R.id.txtAddress);
         txtDescription = (TextView) findViewById(R.id.txtDescription);
         farmPictures = (ImageView) findViewById(R.id.farmPictures);
-        //mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_pictures)
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_pictures);
         // TODO : afficher images et produits proposés
     }
     /*private void initRecyclerView() {
@@ -157,6 +155,7 @@ public class FarmActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
     }*/
+
     private void setButtonEdit(){
         buttonEdit = (Button) findViewById(R.id.edit);
 
@@ -205,20 +204,26 @@ public class FarmActivity extends AppCompatActivity {
         });
     }
     private void loadImageByInternetUrl() {
-        picturesList = new ArrayList<>();
+        picturesList = new ArrayList();
         pictureVM = ViewModelProviders.of(this).get(PictureVM.class);
         pictureVM
-                .getPicturesByFarmId(getApplicationContext(), farmId)
+                .getPicturesByFarmId(this, farmId)
                 .observe(this, pictures -> {
-                    System.out.println("replop");
-                    for(Picture picture:pictures) {
-                        String internetUrl = picture.getPictureURL();
-                        System.out.println("rereplop");
-                        Glide
-                                .with(context)
-                                .load(internetUrl)
-                                .into(farmPictures);
+                    if(pictures.isEmpty()){
+                        Toast.makeText(getApplicationContext(), R.string.errorLoadingPictures, Toast.LENGTH_LONG).show();
+                        return;
                     }
-                });
+                    picturesList = (ArrayList<Picture>) pictures;
+                initRecyclerView();
+        });
+    }
+    private void initRecyclerView(){
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        RecyclerViewPicturesAdapter recyclerViewPicturesAdapter = new RecyclerViewPicturesAdapter(this, picturesList);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(recyclerViewPicturesAdapter);
     }
 }
+

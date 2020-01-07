@@ -25,7 +25,7 @@ public class PictureRepository extends InternetChecking {
     }
 
     public MutableLiveData<List<Picture>> getPicturesByFarmId(Integer id){
-        MutableLiveData<List<Picture>> mutableLiveData = new MutableLiveData<>();
+        final MutableLiveData<List<Picture>> mutableLiveData = new MutableLiveData<>();
         if(!super.isNetworkAvailable())
             Toast.makeText(context.getApplicationContext(), R.string.noInternet, Toast.LENGTH_LONG).show();
         else {
