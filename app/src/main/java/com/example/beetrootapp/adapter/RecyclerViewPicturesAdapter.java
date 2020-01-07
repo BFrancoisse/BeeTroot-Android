@@ -28,7 +28,6 @@ public class RecyclerViewPicturesAdapter extends RecyclerView.Adapter<RecyclerVi
 
         mPictures = pictures;
         mContext = context;
-        System.out.println("plooop");
     }
 
     @NonNull

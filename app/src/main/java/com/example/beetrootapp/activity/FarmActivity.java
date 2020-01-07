@@ -18,33 +18,27 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.beetrootapp.R;
 import com.example.beetrootapp.ViewModel.FarmVM;
-//import com.example.beetrootapp.ViewModel.PictureVM;
 import com.example.beetrootapp.ViewModel.PictureVM;
 import com.example.beetrootapp.ViewModel.UserVM;
-//import com.example.beetrootapp.adapter.RecyclerViewPicturesAdapter;
 import com.example.beetrootapp.adapter.RecyclerViewPicturesAdapter;
 import com.example.beetrootapp.model.Farm;
 import com.example.beetrootapp.model.Picture;
 import com.example.beetrootapp.model.User;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FarmActivity extends AppCompatActivity {
     private Button buttonEdit;
     private Button buttonDirection;
     private Button buttonReview;
     private Button buttonFavourite;
-    private ImageView farmPictures;
     private TextView txtFarmerName;
     private TextView txtFarmerPhone;
     private TextView txtAddress;
     private TextView txtDescription;
     private RecyclerView recyclerView;
-    //private RecyclerViewPicturesAdapter mAdapter;
 
     private String userEmail;
     private Integer farmerId;
@@ -57,7 +51,6 @@ public class FarmActivity extends AppCompatActivity {
     private PictureVM pictureVM;
     private ArrayList<Picture> picturesList;
 
-    private Context context = FarmActivity.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +68,6 @@ public class FarmActivity extends AppCompatActivity {
         setButtonReview();
         setButtonEdit();
         setButtonFavourite();
-        //initRecyclerView();
 
         bindViewId();
     }
@@ -106,29 +98,18 @@ public class FarmActivity extends AppCompatActivity {
                 setTitle(farm.getName());
                 this.farmId = farm.getId();
                 this.currentFarm = farm;
+                loadImageByInternetUrl();
             });
         }
         else {
             userVM = ViewModelProviders.of(this).get(UserVM.class);
             userVM.getUserByEmail(getApplicationContext(),this.userEmail).observe(this, user ->{
-                /*if(user == null){
-                    Toast.makeText(getApplicationContext(), R.string.noData, Toast.LENGTH_LONG).show();
-                    /*Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                    intent.putExtra("userEmail", userEmail);
-                    startActivity(intent);*//*
-                    finish();
-                    return;
-                }*/
-
                 txtFarmerPhone.setText(user.getPhone());
                 txtFarmerName.setText(user.getFirstname() + " " + user.getLastname());
             });
             farmVM.getFarmByEmail(userEmail, getApplicationContext()).observe(this, farm -> {
                 if(farm == null){
                     Toast.makeText(getApplicationContext(), R.string.noFarm, Toast.LENGTH_LONG).show();
-                    /*Intent intent = new Intent(getBaseContext(), MainActivity.class);
-                    intent.putExtra("userEmail", userEmail);
-                    startActivity(intent);*/
                     finish();
                     return;
                 }
@@ -147,17 +128,10 @@ public class FarmActivity extends AppCompatActivity {
         txtFarmerPhone = (TextView) findViewById(R.id.txtFarmerPhone);
         txtAddress = (TextView) findViewById(R.id.txtAddress);
         txtDescription = (TextView) findViewById(R.id.txtDescription);
-        farmPictures = (ImageView) findViewById(R.id.farmPictures);
+        //farmPictures = (ImageView) findViewById(R.id.farmPictures);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_pictures);
         // TODO : afficher images et produits proposés
     }
-    /*private void initRecyclerView() {
-        mAdapter = new RecyclerViewPicturesAdapter(this, pictureVM.getPicturesByFarmId(this, currentFarm.getId()).getValue());
-        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(linearLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
-    }*/
-
     private void setButtonEdit(){
         buttonEdit = (Button) findViewById(R.id.edit);
 
@@ -209,10 +183,6 @@ public class FarmActivity extends AppCompatActivity {
 
         pictureVM = ViewModelProviders.of(this).get(PictureVM.class);
         pictureVM.getPicturesByFarmId(this, farmId).observe(this, pictures -> {
-                   /*if(pictures.isEmpty()){
-                        Toast.makeText(getApplicationContext(), R.string.errorLoadingPictures, Toast.LENGTH_LONG).show();
-                        return;
-                    }*/
                 picturesList = (ArrayList<Picture>) pictures;
                 initRecyclerView();
         });

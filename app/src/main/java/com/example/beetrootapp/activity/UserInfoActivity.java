@@ -80,8 +80,8 @@ public class UserInfoActivity extends AppCompatActivity {
         txtNumberHouse = (TextView) findViewById(R.id.txtNumberHouse);
         txtZipCode = (TextView) findViewById(R.id.txtZipCode);
         txtLocality = (TextView) findViewById(R.id.txtLocality);
-        txtFarmName = (TextView) findViewById(R.id.txtFarmName);
-        txtFarmPhone = (TextView) findViewById(R.id.txtFarmPhone);
+        /*txtFarmName = (TextView) findViewById(R.id.txtFarmName);
+        txtFarmPhone = (TextView) findViewById(R.id.txtFarmPhone);*/
 
     }
     public void setButtonEditProfile(){

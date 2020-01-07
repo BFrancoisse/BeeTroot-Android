@@ -75,13 +75,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
         bindById(view);
         initSearchBar();
         initClickListenerSearchMagnify();
-        //initClickListenerGPS();
         return view;
     }
     public void bindById(View view){
         searchtext = (EditText)view.findViewById(R.id.input_search);
         searchMagnify = (ImageView)view.findViewById(R.id.ic_magnify);
-        //mGPS = (ImageView)view.findViewById(R.id.ic_gps);
     }
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -171,7 +169,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleA
             }
         });
     }
-    //Custom Marker
     private BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId){
         Drawable vectorDrawable= ContextCompat.getDrawable(context,vectorResId);
         vectorDrawable.setBounds(0,0,vectorDrawable.getIntrinsicWidth(),vectorDrawable.getIntrinsicWidth());

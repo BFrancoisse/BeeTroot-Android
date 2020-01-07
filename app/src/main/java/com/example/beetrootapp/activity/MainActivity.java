@@ -6,12 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.beetrootapp.ViewModel.UserVM;
 import com.example.beetrootapp.fragment.FavoritesFragment;
@@ -25,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     protected DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
-    private UserVM userVM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,13 +99,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                String userEmail = getIntent().getStringExtra("userEmail");
                Intent openFarmActivity = new Intent(this, FarmActivity.class);
                openFarmActivity.putExtra("userEmail", userEmail);
-               /*userVM = ViewModelProviders.of(this).get(UserVM.class);
-               userVM.getUserIdByEmail(getApplicationContext(),userEmail).observe(this, id ->{
-
-                   Integer farmerId = id;
-                   openFarmActivity.putExtra("farmerId", farmerId);
-
-               });*/
                startActivity(openFarmActivity);
               break;
            case R.id.harvestProximity:

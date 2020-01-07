@@ -25,7 +25,6 @@ public class ConnectionActivity extends AppCompatActivity {
     private Button button_connection;
     private AwesomeValidation awesomeValidation;
     private JwtVM jwtVM;
-    private UserVM userVM;
 
 
     @Override

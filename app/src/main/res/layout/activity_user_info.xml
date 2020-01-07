@@ -297,7 +297,7 @@
 
                 <!-- Si l'utilisateur possède une ferme -->
 
-                <LinearLayout
+               <!-- <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -370,7 +370,7 @@
                         android:layout_marginBottom="15dp"
                         android:background="@color/colorPrimary" />
 
-                </LinearLayout>
+                </LinearLayout> -->
 
 
 

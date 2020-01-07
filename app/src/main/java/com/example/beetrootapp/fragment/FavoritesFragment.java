@@ -20,8 +20,6 @@ import com.example.beetrootapp.model.Farm;
 import java.util.ArrayList;
 
 public class FavoritesFragment extends Fragment {
-    //private List<Like> likedFarm;
-    //private LikeVM likeVM; problème API au niveau de l'ajout donc on va afficher les fermes de la DB
     private FarmVM farmVM;
     private ArrayList<Farm> likedFarm;
     private RecyclerView recyclerView;
